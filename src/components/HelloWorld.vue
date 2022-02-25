@@ -45,9 +45,11 @@ export default defineComponent({
   </p>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../assets/styles/colors';
+
 a {
-  color: #42b983;
+  color: $primary;
 }
 
 label {
