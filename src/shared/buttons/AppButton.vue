@@ -34,6 +34,9 @@ button {
   font-size: $smallfont;
   font-weight: $fontWeightBold;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &.primary {
     background: $primary;
