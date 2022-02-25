@@ -1,6 +1,9 @@
 <template>
   <h1>AppButton</h1>
+  <p>Relative to font size</p>
   <AppButton>Click me</AppButton>
+  <p>Fixed button width</p>
+  <AppButton style="width: 300px">Click me</AppButton>
 </template>
 
 <script>
