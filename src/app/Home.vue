@@ -6,48 +6,39 @@
     </div>
     <span class="gradient" />
   </nav>
-  <AppCard v-if="packageName" :package-name="packageName" />
+  <AppCard
+    v-for="packageName in packageNames"
+    :key="packageName"
+    :package-name="packageName"
+  />
   <AddApp />
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, watch } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
 import IconView from '@/shared/icons/IconView.vue'
 import AddApp from '@/components/AddApp.vue'
 import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
-import { RouteLocationNormalizedLoaded, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import AppCard from '@/components/AppCard.vue'
 import ShareButton from '@/components/ShareButton.vue'
+import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
 
 export default defineComponent({
   name: 'App',
   components: { IconView, AddApp, AppCard, ShareButton },
   setup() {
     const route = useRoute()
-    const extractPackageName = (
-      route: RouteLocationNormalizedLoaded
-    ): string | undefined => {
-      return typeof route.query['packagename'] === 'string'
-        ? route.query['packagename']
-        : undefined
-    }
-
-    const packageName = ref<string>('')
-    onMounted(() => {
-      packageName.value = extractPackageName(route) ?? ''
-    })
+    const packageNames = ref<string[]>(extractPackageNamesFromRoute(route))
 
     watch(route, () => {
-      const newQueryPackage = extractPackageName(route)
-      if (newQueryPackage) {
-        packageName.value = newQueryPackage
-      }
+      packageNames.value = extractPackageNamesFromRoute(route)
     })
 
     return {
       IconColorizable,
       IconRegular,
-      packageName,
+      packageNames,
     }
   },
 })
