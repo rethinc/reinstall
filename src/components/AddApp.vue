@@ -3,6 +3,7 @@
     <button @click="addApp()">+</button>
   </template>
   <template v-if="isAdding">
+    <HowToUse />
     <form @submit.prevent="submit()" @reset.prevent="reset()">
       <label for="packageName">Package Name</label>
       <input id="packageName" v-model="packageName" type="text" />
@@ -15,8 +16,10 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import HowToUse from '@/components/HowToUse.vue'
 
 export default defineComponent({
+  components: { HowToUse },
   setup() {
     const isAdding = ref<boolean>(false)
 
