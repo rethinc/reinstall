@@ -2,8 +2,7 @@
   <nav class="navigation-wrapper">
     <div class="navigation-items">
       <icon-view :type="IconRegular.Reinstall_sign" style="height: 60px" />
-      <button @click="share()">Share</button>
-      <ShareUrl v-if="shareUrl" :url="shareUrl" />
+      <ShareButton />
     </div>
     <span class="gradient" />
   </nav>
@@ -18,14 +17,13 @@ import AddApp from '@/components/AddApp.vue'
 import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
 import { RouteLocationNormalizedLoaded, useRoute } from 'vue-router'
 import AppCard from '@/components/AppCard.vue'
-import ShareUrl from '@/components/ShareUrl.vue'
+import ShareButton from '@/components/ShareButton.vue'
 
 export default defineComponent({
   name: 'App',
-  components: { IconView, AddApp, AppCard, ShareUrl },
+  components: { IconView, AddApp, AppCard, ShareButton },
   setup() {
     const route = useRoute()
-    const shareUrl = ref<string | undefined>(undefined)
     const extractPackageName = (
       route: RouteLocationNormalizedLoaded
     ): string | undefined => {
@@ -46,16 +44,10 @@ export default defineComponent({
       }
     })
 
-    const share = () => {
-      shareUrl.value = window.location.href
-    }
-
     return {
       IconColorizable,
       IconRegular,
       packageName,
-      shareUrl,
-      share,
     }
   },
 })
