@@ -75,7 +75,7 @@ export default defineComponent({
     flex-direction: row;
     justify-content: space-between;
     width: 100vw;
-    padding: $spacing-smallest $spacing-small;
+    padding: $spacing-small $spacing-small;
 
     #logo {
       position: absolute;
@@ -96,7 +96,7 @@ export default defineComponent({
 }
 
 .main-content {
-  padding: 140px 4vw;
+  padding: 100px 4vw;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
