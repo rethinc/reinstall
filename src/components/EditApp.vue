@@ -23,13 +23,14 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
+  emits: ['cancel'],
+  setup(props, { emit }) {
     const currentPackageName = ref<string>(props.packageName)
 
     const router = useRouter()
 
     const reset = () => {
-      console.log('cancel')
+      emit('cancel')
     }
 
     const route = useRoute()

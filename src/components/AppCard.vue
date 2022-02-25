@@ -8,11 +8,15 @@
     </form>
     <button @click="edit()">Edit</button>
   </template>
-  <EditApp v-if="isEditing" :package-name="packageName" />
+  <EditApp
+    v-if="isEditing"
+    :package-name="packageName"
+    @cancel="cancelEditing()"
+  />
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, PropType, ref } from 'vue'
+import { defineComponent, PropType, ref } from 'vue'
 import EditApp from '@/components/EditApp.vue'
 
 export default defineComponent({
@@ -38,12 +42,13 @@ export default defineComponent({
       isEditing.value = true
     }
 
-    onMounted(() => {
+    const cancelEditing = () => {
       isEditing.value = false
-    })
+    }
 
     return {
       isEditing,
+      cancelEditing,
       versionCode,
       install,
       edit,
