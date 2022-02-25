@@ -6,14 +6,16 @@
     </div>
     <span class="gradient" />
   </nav>
-  <div class="app-list">
-    <card-wrapper v-for="packageName in packageNames" :key="packageName">
-      <AppCard :package-name="packageName" />
+  <div class="main-content">
+    <div class="app-list">
+      <card-wrapper v-for="packageName in packageNames" :key="packageName">
+        <AppCard :package-name="packageName" />
+      </card-wrapper>
+    </div>
+    <card-wrapper>
+      <AddApp />
     </card-wrapper>
   </div>
-  <card-wrapper>
-    <AddApp />
-  </card-wrapper>
 </template>
 
 <script lang="ts">
@@ -29,7 +31,13 @@ import CardWrapper from '@/components/CardWrapper.vue'
 
 export default defineComponent({
   name: 'App',
-  components: { CardWrapper, IconView, AddApp, AppCard, ShareButton },
+  components: {
+    CardWrapper,
+    IconView,
+    AddApp,
+    AppCard,
+    ShareButton,
+  },
   setup() {
     const route = useRoute()
     const packageNames = ref<string[]>(extractPackageNamesFromRoute(route))
@@ -71,6 +79,10 @@ export default defineComponent({
     height: 40px;
     background: linear-gradient(180deg, #50e3c2 0%, rgba(80, 227, 194, 0) 100%);
   }
+}
+
+.main-content {
+  @include page-indent;
 }
 
 .app-list {

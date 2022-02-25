@@ -7,3 +7,10 @@ $spacing-small: 16px;
 $spacing-normal: 24px;
 $spacing-large: 32px;
 $spacing-huge: 62px;
+
+@mixin page-indent() {
+    padding: 0 4vw;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
