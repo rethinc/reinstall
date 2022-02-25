@@ -61,6 +61,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import '../assets/styles/colors';
+@import '../assets/styles/browser-reset';
 
 .colorizedIcon {
   color: $primary;
