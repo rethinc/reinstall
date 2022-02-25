@@ -5,7 +5,8 @@
   />
   {{ packageName }}
   <form @submit.prevent="install()">
-    <input v-model="buildNumber" type="text" />
+    <label for="buildNumber">Version Code</label>
+    <input id="buildNumber" v-model="buildNumber" type="text" />
     <button>Install</button>
   </form>
 
