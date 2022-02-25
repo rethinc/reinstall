@@ -30,8 +30,8 @@ export default defineComponent({
 
 button {
   border: none;
-  padding: $spacing-small;
-  font-size: $smallfont;
+  padding: $spacing-button;
+  font-size: $smallfont !important;
   font-weight: $fontWeightBold;
   cursor: pointer;
   display: flex;

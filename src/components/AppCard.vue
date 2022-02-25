@@ -12,7 +12,7 @@
           placeholder="1234"
         />
       </input-field>
-      <app-button> Install </app-button>
+      <app-button> Install</app-button>
     </form>
     <AppButton :appearance="AppButtonAppearance.Transparent" @click="edit()">
       <IconView :type="IconColorizable.Edit" class="icon" />
@@ -94,6 +94,8 @@ export default defineComponent({
     flex: 1 1 auto;
     height: 47px;
     padding: 0 $spacing-normal;
+    font-size: $smallfont;
+    font-weight: $fontWeightBold;
   }
 }
 
