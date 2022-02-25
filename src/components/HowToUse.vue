@@ -1,7 +1,10 @@
 <template>
   <div class="guide">
     <h2>Add new</h2>
-    <p>In order to use re:install make sure you enabled internal App Sharing on Google Play.</p>
+    <p>
+      In order to use re:install make sure you enabled internal App Sharing on
+      Google Play.
+    </p>
     <AppButton
       :appearance="AppButtonAppearance.Textlink"
       @click="onShowDetail()"
