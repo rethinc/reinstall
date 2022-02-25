@@ -30,6 +30,7 @@ workflows:
                 #!/usr/bin/env bash
                 set -e
                 IMAGE_NAME="reinstall"
+                ./ci/write-secrets-from-env.sh
                 ./ci/deploy.sh ${IMAGE_NAME} latest
       - cache-push@2.5.0:
           inputs:
