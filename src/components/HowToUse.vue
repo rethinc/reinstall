@@ -50,7 +50,7 @@ export default defineComponent({
     const showDetail = ref<boolean>(false)
 
     const onShowDetail = () => {
-      showDetail.value = true
+      showDetail.value = !showDetail.value
     }
 
     return {
