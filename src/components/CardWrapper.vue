@@ -18,7 +18,7 @@ export default defineComponent({
 
 .card-wrapper {
   background: $white;
-  padding: $spacing-large;
+  padding: $spacing-normal;
   display: flex;
   justify-content: center;
   flex-direction: column;
