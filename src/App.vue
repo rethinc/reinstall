@@ -4,8 +4,8 @@
     style="width: 200px; height: 200px"
   />
   <form @submit.prevent="install()">
-    <input type="text" v-model="packageName" />
-    <input type="text" v-model="buildNumber" />
+    <input v-model="packageName" type="text" />
+    <input v-model="buildNumber" type="text" />
     <button>Install</button>
   </form>
 </template>
