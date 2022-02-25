@@ -3,7 +3,7 @@
 
   <h2>Basic state</h2>
   <div>
-    <share-url />
+    <share-url url="https://www.rethinc.ch" />
   </div>
 </template>
 
