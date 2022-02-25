@@ -82,6 +82,7 @@ export default defineComponent({
 @import '../assets/styles/sizes-and-spacings';
 
 .footer-buttons {
+  margin-top: $spacing-small;
   display: flex;
 
   > * {
