@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "format": "prettier --write .",
+    "format": "eslint --fix 'src/**/*.vue' 'view-examples/**/*.vue' 'src/**/*.ts' 'view-examples/**/*.ts'",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
     "test": "jest --watch",
     "generate-icons": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/generate-icons.ts",
