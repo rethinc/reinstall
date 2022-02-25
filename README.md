@@ -53,6 +53,7 @@ npm run generate-icons
 
 run docker locally
 ```
+npm run build
 docker build -t reinstall .
 docker run -dp 8080:80 --name reinstall reinstall
 ```
