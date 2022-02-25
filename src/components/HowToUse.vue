@@ -6,7 +6,7 @@
       :appearance="AppButtonAppearance.Transparent"
       @click="onShowDetail()"
     >
-      Show me how
+      {{ showDetailButtonContent }}
     </AppButton>
   </div>
   <div v-if="showDetail" class="textblock">
@@ -40,7 +40,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { computed, defineComponent, ref } from 'vue'
 import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
 
 export default defineComponent({
@@ -48,6 +48,10 @@ export default defineComponent({
   components: { AppButton },
   setup() {
     const showDetail = ref<boolean>(false)
+
+    const showDetailButtonContent = computed(() => {
+      return showDetail.value ? 'Hide' : 'Show me how'
+    })
 
     const onShowDetail = () => {
       showDetail.value = !showDetail.value
@@ -57,6 +61,7 @@ export default defineComponent({
       AppButtonAppearance,
       onShowDetail,
       showDetail,
+      showDetailButtonContent,
     }
   },
 })
