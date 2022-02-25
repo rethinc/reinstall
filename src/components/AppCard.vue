@@ -4,7 +4,7 @@
     <form @submit.prevent="install()">
       <input-field>
         <label for="versionCode" class="label">Version Code</label>
-        <input id="versionCode" v-model="versionCode" type="text" class="input" placeholder="1234"/>
+        <input id="versionCode" class="input" v-model="versionCode" type="text" placeholder="1234"/>
       </input-field>
       <button>Install</button>
     </form>
@@ -24,7 +24,7 @@ import InputField from '@/components/InputField.vue'
 
 export default defineComponent({
   name: 'AppCard',
-  components: {InputField, EditApp },
+  components: { InputField, EditApp },
   props: {
     packageName: {
       type: String as PropType<string>,

@@ -3,7 +3,12 @@
     <form @submit.prevent="save()" @reset.prevent="onCancel()">
       <input-field>
         <label for="packageName" class="label">Package Name</label>
-        <input id="packageName" class="input" v-model="currentPackageName" type="text" />
+        <input
+          id="packageName"
+          v-model="currentPackageName"
+          class="input"
+          type="text"
+        />
       </input-field>
       <button type="reset">Cancel</button>
       <button>Save</button>
@@ -18,7 +23,7 @@ import InputField from '@/components/InputField.vue'
 
 export default defineComponent({
   name: 'EditApp',
-  components: {InputField},
+  components: { InputField },
   props: {
     packageName: {
       type: String as PropType<string>,
