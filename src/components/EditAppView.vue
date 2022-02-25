@@ -10,20 +10,31 @@
           type="text"
         />
       </input-field>
-      <button type="reset">Cancel</button>
-      <button>Save</button>
+      <AppButton type="reset" :appearance="AppButtonAppearance.Transparent"
+        >Cancel</AppButton
+      >
+      <AppButton>Save</AppButton>
     </form>
-    <button @click="onDelete()">Delete</button>
+    <div class="delete-container">
+      <AppButton
+        :appearance="AppButtonAppearance.Transparent"
+        @click="onDelete()"
+        ><icon-view :type="IconColorizable.Trash"
+      /></AppButton>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
 import InputField from '@/components/InputField.vue'
+import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import IconView from '@/shared/icons/IconView.vue'
+import { IconColorizable } from '@/shared/icons/IconProvider'
 
 export default defineComponent({
   name: 'EditApp',
-  components: { InputField },
+  components: { IconView, AppButton, InputField },
   props: {
     packageName: {
       type: String as PropType<string>,
@@ -53,7 +64,16 @@ export default defineComponent({
     return {
       currentPackageName,
       save,
+      AppButtonAppearance,
+      IconColorizable,
     }
   },
 })
 </script>
+
+<style scoped lang="scss">
+.delete-container {
+  display: flex;
+  justify-content: center;
+}
+</style>
