@@ -3,12 +3,12 @@
     :type="IconRegular.Reinstall_logo"
     style="width: 200px; height: 200px"
   />
-  <AppCard :package-name="packageName" />
+  <AppCard v-if="packageName" :package-name="packageName" />
   <AddApp />
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watch } from 'vue'
+import { defineComponent, onMounted, ref, watch } from 'vue'
 import IconView from '@/shared/icons/IconView.vue'
 import AddApp from '@/components/AddApp.vue'
 import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
@@ -28,7 +28,10 @@ export default defineComponent({
         : undefined
     }
 
-    const packageName = ref<string>(extractPackageName(route) ?? '')
+    const packageName = ref<string>('')
+    onMounted(() => {
+      packageName.value = extractPackageName(route) ?? ''
+    })
 
     watch(route, () => {
       const newQueryPackage = extractPackageName(route)
