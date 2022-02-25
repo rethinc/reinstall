@@ -5,10 +5,6 @@
     </div>
     <span class="gradient" />
   </nav>
-  <icon-view
-    :type="IconRegular.Reinstall_logo"
-    style="width: 200px; height: 200px"
-  />
   <AppCard v-if="packageName" :package-name="packageName" />
   <AddApp />
 </template>
