@@ -15,7 +15,7 @@
       <app-button> Install </app-button>
     </form>
     <AppButton :appearance="AppButtonAppearance.Transparent" @click="edit()">
-      <icon-view :type="IconColorizable.Edit" />
+      <IconView :type="IconColorizable.Edit" class="icon" />
     </AppButton>
   </template>
   <EditApp
@@ -95,5 +95,10 @@ export default defineComponent({
     height: 47px;
     padding: 0 $spacing-normal;
   }
+}
+
+.icon {
+  width: $icon-size;
+  height: $icon-size;
 }
 </style>
