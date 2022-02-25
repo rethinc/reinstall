@@ -1,9 +1,11 @@
 <template>
   <template v-if="!isEditing">
-    <h1>{{ packageName }}</h1>
+    <h2>{{ packageName }}</h2>
     <form @submit.prevent="install()">
-      <label for="versionCode">Version Code</label>
-      <input id="versionCode" v-model="versionCode" type="text" />
+      <input-field>
+        <label for="versionCode" class="label">Version Code</label>
+        <input id="versionCode" v-model="versionCode" type="text" class="input" placeholder="1234"/>
+      </input-field>
       <button>Install</button>
     </form>
     <button @click="edit()">Edit</button>
@@ -18,10 +20,11 @@
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
 import EditApp from '@/components/EditApp.vue'
+import InputField from '@/components/InputField.vue'
 
 export default defineComponent({
   name: 'AppCard',
-  components: { EditApp },
+  components: {InputField, EditApp },
   props: {
     packageName: {
       type: String as PropType<string>,
@@ -60,6 +63,7 @@ export default defineComponent({
 <style scoped lang="scss">
 @import '../assets/styles/colors';
 @import '../assets/styles/browser-reset';
+@import '../assets/styles/sizes-and-spacings';
 
 .colorizedIcon {
   color: $primary;
