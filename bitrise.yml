@@ -30,8 +30,7 @@ workflows:
                 #!/usr/bin/env bash
                 set -e
                 IMAGE_NAME="reinstall"
-                docker build -t $IMAGE_NAME .
-                ./ci/push-image.sh ${IMAGE_NAME} latest
+                ./ci/deploy.sh ${IMAGE_NAME} latest
       - cache-push@2.5.0:
           inputs:
             - cache_paths: "./node_modules"
