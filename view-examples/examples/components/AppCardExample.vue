@@ -33,7 +33,7 @@ import HowToUse from '@/components/HowToUse.vue'
 
 export default defineComponent({
   name: 'AppCardExample',
-  components: { AddApp, AppCard, CardWrapper, HowToUse},
+  components: { AddApp, AppCard, CardWrapper, HowToUse },
 })
 </script>
 
