@@ -6,12 +6,14 @@
     </div>
     <span class="gradient" />
   </nav>
-  <AppCard
-    v-for="packageName in packageNames"
-    :key="packageName"
-    :package-name="packageName"
-  />
-  <AddApp />
+  <div class="app-list">
+    <card-wrapper v-for="packageName in packageNames" :key="packageName">
+      <AppCard :package-name="packageName" />
+    </card-wrapper>
+  </div>
+  <card-wrapper>
+    <AddApp />
+  </card-wrapper>
 </template>
 
 <script lang="ts">
@@ -23,10 +25,11 @@ import { useRoute } from 'vue-router'
 import AppCard from '@/components/AppCard.vue'
 import ShareButton from '@/components/ShareButton.vue'
 import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
+import CardWrapper from '@/components/CardWrapper.vue'
 
 export default defineComponent({
   name: 'App',
-  components: { IconView, AddApp, AppCard, ShareButton },
+  components: { CardWrapper, IconView, AddApp, AppCard, ShareButton },
   setup() {
     const route = useRoute()
     const packageNames = ref<string[]>(extractPackageNamesFromRoute(route))
@@ -67,6 +70,12 @@ export default defineComponent({
     width: 100vw;
     height: 40px;
     background: linear-gradient(180deg, #50e3c2 0%, rgba(80, 227, 194, 0) 100%);
+  }
+}
+
+.app-list {
+  > * {
+    margin-bottom: $spacing-normal;
   }
 }
 
