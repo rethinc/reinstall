@@ -1,18 +1,19 @@
 <template>
-  <input v-model="shareUrl" type="text" />
+  <input type="text" :value="url" />
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
-  name: 'ShareUrl',
-  setup() {
-    const shareUrl = ref<string>('')
-
-    return {
-      shareUrl,
-    }
+  props: {
+    url: {
+      type: String as PropType<string>,
+      required: true,
+    },
+  },
+  setup(props) {
+    console.log(props)
   },
 })
 </script>

@@ -6,13 +6,15 @@
     <button>Install</button>
   </form>
   <button @click="share()">Share</button>
-  <div v-if="copyUrl">{{ copyUrl }}</div>
+  <ShareUrl v-if="shareUrl" :url="shareUrl" />
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
+import ShareUrl from '@/components/ShareUrl.vue'
 
 export default defineComponent({
+  components: { ShareUrl },
   props: {
     packageName: {
       type: String as PropType<string>,
@@ -21,7 +23,7 @@ export default defineComponent({
   },
   setup(props) {
     const versionCode = ref<string>('1569')
-    const copyUrl = ref<string | undefined>(undefined)
+    const shareUrl = ref<string | undefined>(undefined)
 
     const install = (): void => {
       window.open(
@@ -29,12 +31,12 @@ export default defineComponent({
       )
     }
     const share = () => {
-      copyUrl.value = window.location.href
+      shareUrl.value = window.location.href
     }
 
     return {
       versionCode,
-      copyUrl,
+      shareUrl,
       install,
       share,
     }
