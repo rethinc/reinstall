@@ -1,8 +1,10 @@
 <template>
   <div class="card-wrapper">
     <form @submit.prevent="save()" @reset.prevent="onCancel()">
-      <label for="packageName">Package Name</label>
-      <input id="packageName" v-model="currentPackageName" type="text" />
+      <input-field>
+        <label for="packageName" class="label">Package Name</label>
+        <input id="packageName" class="input" v-model="currentPackageName" type="text" />
+      </input-field>
       <button type="reset">Cancel</button>
       <button>Save</button>
     </form>
@@ -12,9 +14,11 @@
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
+import InputField from '@/components/InputField.vue'
 
 export default defineComponent({
   name: 'EditApp',
+  components: {InputField},
   props: {
     packageName: {
       type: String as PropType<string>,
