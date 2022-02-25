@@ -2,7 +2,7 @@
   <EditAppView
     :package-name="packageName"
     :on-save="submit"
-    :on-cancel="reset"
+    :on-cancel="onClose"
     :on-delete="deleteApp"
   />
 </template>
@@ -21,19 +21,19 @@ export default defineComponent({
       type: String as PropType<string>,
       required: true,
     },
+    onClose: {
+      type: Function as PropType<() => void>,
+      required: true,
+    },
   },
-  emits: ['cancel'],
-  setup(props, { emit }) {
+  setup(props) {
     const router = useRouter()
-
-    const reset = () => {
-      emit('cancel')
-    }
 
     const route = useRoute()
 
     const deleteApp = () => {
       const currentPackageNames = extractPackageNamesFromRoute(route)
+      props.onClose()
       router.push({
         path: '/',
         query: {
@@ -52,6 +52,7 @@ export default defineComponent({
         newPackageName,
         ...currentPackageNames.slice(index + 1, currentPackageNames.length),
       ]
+      props.onClose()
       router.push({
         path: '/',
         query: {
@@ -62,7 +63,6 @@ export default defineComponent({
 
     return {
       submit,
-      reset,
       deleteApp,
     }
   },

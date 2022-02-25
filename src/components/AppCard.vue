@@ -11,7 +11,7 @@
   <EditApp
     v-if="isEditing"
     :package-name="packageName"
-    @cancel="cancelEditing()"
+    :on-close="closeEditing"
   />
 </template>
 
@@ -42,13 +42,13 @@ export default defineComponent({
       isEditing.value = true
     }
 
-    const cancelEditing = () => {
+    const closeEditing = () => {
       isEditing.value = false
     }
 
     return {
       isEditing,
-      cancelEditing,
+      closeEditing,
       versionCode,
       install,
       edit,
