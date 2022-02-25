@@ -3,8 +3,9 @@
     <button @click="addApp()">+</button>
   </template>
   <template v-if="isAdding">
-    <form @submit.prevent="submit()">
+    <form @submit.prevent="submit()" @reset.prevent="reset()">
       <input v-model="packageName" type="text" />
+      <button type="reset">Cancel</button>
       <button>Add</button>
     </form>
   </template>
@@ -23,7 +24,12 @@ export default defineComponent({
     const router = useRouter()
 
     const addApp = () => {
+      packageName.value = ''
       isAdding.value = true
+    }
+
+    const reset = () => {
+      isAdding.value = false
     }
 
     const submit = () => {
@@ -37,6 +43,7 @@ export default defineComponent({
     return {
       addApp,
       submit,
+      reset,
       isAdding,
       packageName,
     }
