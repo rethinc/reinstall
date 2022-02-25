@@ -44,4 +44,11 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+@import '../../src/assets/styles/browser-reset';
+@import '../../src/assets/styles/colors';
+
+body {
+  background: $accent;
+}
+</style>
