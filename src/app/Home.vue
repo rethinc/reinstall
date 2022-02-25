@@ -5,8 +5,8 @@
   />
   {{ packageName }}
   <form @submit.prevent="install()">
-    <label for="buildNumber">Version Code</label>
-    <input id="buildNumber" v-model="buildNumber" type="text" />
+    <label for="versionCode">Version Code</label>
+    <input id="versionCode" v-model="versionCode" type="text" />
     <button>Install</button>
   </form>
 
@@ -34,7 +34,7 @@ export default defineComponent({
     }
 
     const packageName = ref<string>(extractPackageName(route) ?? '')
-    const buildNumber = ref<string>('1569')
+    const versionCode = ref<string>('1569')
 
     watch(route, () => {
       const newQueryPackage = extractPackageName(route)
@@ -45,7 +45,7 @@ export default defineComponent({
 
     const install = (): void => {
       window.open(
-        `https://play.google.com/apps/test/${packageName.value}/${buildNumber.value}`
+        `https://play.google.com/apps/test/${packageName.value}/${versionCode.value}`
       )
     }
 
@@ -53,7 +53,7 @@ export default defineComponent({
       IconColorizable,
       IconRegular,
       packageName,
-      buildNumber,
+      versionCode,
       install,
     }
   },
