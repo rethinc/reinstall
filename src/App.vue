@@ -1,21 +1,39 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from '@/components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <h1>re:install</h1>
+  <p>Install Android app with</p>
+  <icon-view
+    :type="IconRegular.Reinstall_logo"
+    style="width: 200px; height: 200px"
+  />
+
+  <p>by clicking this download button</p>
+  <icon-view
+    :type="IconColorizable.Download"
+    style="width: 16px; height: 16px; color: red"
+  />
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script lang="ts">
+import { defineComponent } from 'vue'
+import IconView from '@/shared/icons/IconView.vue'
+import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
+
+export default defineComponent({
+  name: 'App',
+  components: { IconView },
+  setup() {
+    return {
+      IconColorizable,
+      IconRegular,
+    }
+  },
+})
+</script>
+
+<style scoped lang="scss">
+@import './assets/styles/colors';
+
+.colorizedIcon {
+  color: $primary;
 }
 </style>
