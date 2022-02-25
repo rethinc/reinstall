@@ -29,7 +29,7 @@ export default defineComponent({
     const submit = () => {
       router.push({
         path: '/',
-        query: { packageName: packageName.value },
+        query: { packagename: packageName.value },
       })
     }
 
