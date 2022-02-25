@@ -1,13 +1,15 @@
 <template>
   <input readonly type="text" :value="url" />
-  <button @click="copy()">{{ copyText }}</button>
+  <AppButton @click="copy()">{{ copyText }}</AppButton>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
+import AppButton from '@/shared/buttons/AppButton.vue'
 
 export default defineComponent({
   name: 'ShareUrl',
+  components: { AppButton },
   props: {
     url: {
       type: String as PropType<string>,

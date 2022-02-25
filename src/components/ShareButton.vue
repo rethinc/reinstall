@@ -1,14 +1,15 @@
 <template>
-  <button @click="share()">Share</button>
+  <AppButton @click="share()">Share</AppButton>
   <ShareUrl v-if="shareUrl" :url="shareUrl" @copy="copied" />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import ShareUrl from '@/components/ShareUrl.vue'
+import AppButton from '@/shared/buttons/AppButton.vue'
 
 export default defineComponent({
   name: 'ShareButton',
-  components: { ShareUrl },
+  components: { AppButton, ShareUrl },
   setup() {
     const showShareUrl = ref<string | undefined>(undefined)
 
