@@ -4,7 +4,8 @@
   </template>
   <template v-if="isAdding">
     <form @submit.prevent="submit()" @reset.prevent="reset()">
-      <input v-model="packageName" type="text" />
+      <label for="packageName">Package Name</label>
+      <input id="packageName" v-model="packageName" type="text" />
       <button type="reset">Cancel</button>
       <button>Add</button>
     </form>
