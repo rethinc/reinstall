@@ -31,8 +31,8 @@ export default defineComponent({
       addApp,
       submit,
       isAdding,
-      packageName
+      packageName,
     }
- },
+  },
 })
 </script>
