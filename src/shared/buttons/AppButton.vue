@@ -9,6 +9,7 @@ export enum AppButtonAppearance {
   Primary = 'primary',
   Transparent = 'transparent',
   Secondary = 'secondary',
+  Textlink = 'textlink',
 }
 
 export default defineComponent({
@@ -49,6 +50,12 @@ button {
   &.transparent {
     background: transparent;
     color: $primary;
+  }
+
+  &.textlink {
+    background: transparent;
+    color: $primary;
+    padding: 0;
   }
 }
 </style>

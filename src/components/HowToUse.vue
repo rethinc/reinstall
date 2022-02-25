@@ -1,14 +1,14 @@
 <template>
-  <div>
+  <div class="guide">
     In order to use re:install make sure you enabled internal App Sharing on <b>Google Play.</b><br>
     <AppButton
-      :appearance="AppButtonAppearance.Transparent"
+      :appearance="AppButtonAppearance.Textlink"
       @click="onShowDetail()"
     >
       {{ showDetailButtonContent }}
     </AppButton>
   </div>
-  <div v-if="showDetail" class="textblock">
+  <div v-if="showDetail" class="textblock guide">
     <h2>Prerequisites</h2>
     <h3>Pushing packages to google play</h3>
     <p>
@@ -41,10 +41,11 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
 import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import IconView from '@/shared/icons/IconView.vue'
 
 export default defineComponent({
   name: 'HowToUse',
-  components: { AppButton },
+  components: {IconView, AppButton },
   setup() {
     const showDetail = ref<boolean>(false)
 
@@ -69,6 +70,12 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '../assets/styles/fonts';
 @import '../assets/styles/sizes-and-spacings';
+
+.guide {
+  > * {
+    margin-bottom: $spacing-normal;
+  }
+}
 
 .textblock {
   @include typography-default;

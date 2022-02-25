@@ -81,7 +81,7 @@ export default defineComponent({
 .install-form {
   display: flex;
   margin-bottom: $spacing-normal;
-  align-items: end;
+  align-items: flex-end;
 
   :first-child {
     flex: 1 1 auto;
