@@ -3,8 +3,8 @@
     :type="IconRegular.Reinstall_logo"
     style="width: 200px; height: 200px"
   />
+  {{ packageName }}
   <form @submit.prevent="install()">
-    <input v-model="packageName" type="text" />
     <input v-model="buildNumber" type="text" />
     <button>Install</button>
   </form>
