@@ -1,5 +1,8 @@
 <template>
-  <input type="text" :value="url" />
+  <input readonly type="text" :value="url" />
+  <button @click="copy()">
+    Copy
+  </button>
 </template>
 
 <script lang="ts">
@@ -14,7 +17,12 @@ export default defineComponent({
     },
   },
   setup(props) {
-    console.log(props)
+    const copy = () => {
+      navigator.clipboard.writeText(props.url)
+    }
+    return {
+      copy,
+    }
   },
 })
 </script>
