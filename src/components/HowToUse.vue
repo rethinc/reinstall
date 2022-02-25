@@ -1,7 +1,7 @@
 <template>
   <div class="guide">
-    In order to use re:install make sure you enabled internal App Sharing on
-    <b>Google Play.</b><br />
+    <h2>Add new</h2>
+    <p>In order to use re:install make sure you enabled internal App Sharing on Google Play.</p>
     <AppButton
       :appearance="AppButtonAppearance.Textlink"
       @click="onShowDetail()"
@@ -73,7 +73,7 @@ export default defineComponent({
 
 .guide {
   > * {
-    margin-bottom: $spacing-normal;
+    margin-bottom: $spacing-small;
   }
 }
 
