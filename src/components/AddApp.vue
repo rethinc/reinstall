@@ -1,15 +1,24 @@
 <template>
-  <div>
+  <template v-if="state === ViewState.INITIAL">
     <button>+</button>
-  </div>
+  </template>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+
+enum ViewState {
+  ADDING,
+  INITIAL,
+}
 
 export default defineComponent({
   setup() {
-    return {}
+    const state = ref<ViewState>(ViewState.INITIAL)
+
+    return {
+      state,
+    }
   },
 })
 </script>
