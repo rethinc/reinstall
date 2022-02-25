@@ -53,6 +53,7 @@ button {
   &.transparent {
     background: transparent;
     color: $primary;
+    padding: 0;
   }
 
   &.textlink {
