@@ -15,4 +15,9 @@ export default defineComponent({
 
 <style lang="scss">
 @import './assets/styles/browser-reset';
+@import './assets/styles/colors';
+
+body {
+  background: $accent;
+}
 </style>
