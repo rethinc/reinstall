@@ -1,7 +1,7 @@
 <template>
   <div class="card-wrapper">
     <template v-if="!isAdding">
-      <button @click="addApp()"> + </button>
+      <button @click="addApp()">+</button>
     </template>
     <template v-if="isAdding">
       <HowToUse />
@@ -17,11 +17,12 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import HowToUse from '@/components/HowToUse.vue'
+import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
 
 export default defineComponent({
-  components: {HowToUse },
+  components: { HowToUse },
   setup() {
     const isAdding = ref<boolean>(false)
 
@@ -38,11 +39,16 @@ export default defineComponent({
       isAdding.value = false
     }
 
+    const route = useRoute()
+
     const submit = () => {
       isAdding.value = false
+      const currentPackageNams = extractPackageNamesFromRoute(route)
       router.push({
         path: '/',
-        query: { packagename: packageName.value },
+        query: {
+          packagename: [...currentPackageNams, packageName.value],
+        },
       })
     }
 
