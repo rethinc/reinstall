@@ -8,6 +8,7 @@ Run app locally in development mode
 ```
 npm run dev
 ```
+open browser at [http://localhost:3000](http://localhost:3000)
 
 Build app locally (bundle will be created in `/dist` folder)
 ```
@@ -29,7 +30,17 @@ Run jest test runner in watch mode
 npm run test
 ```
 
-## SVG Icons
+### Views
+
+Add view examples component in `view-examples/examples/shared` and register it in `view-examples/examples.ts`
+
+Run view examples app
+```
+npm run view-examples
+```
+open browser at [http://localhost:3001](http://localhost:3001)
+
+### SVG Icons
 
 Place colorizable (color will be defined in css) icons in the `assets/icons/colorizable` and others in `assets/icons/regular`
 
