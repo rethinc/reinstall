@@ -21,7 +21,7 @@ export default defineComponent({
   setup() {
     const packageName = ref<string>('ch.viavelo.customerapp')
     const buildNumber = ref<string>('1569')
-    const install = (): boolean => {
+    const install = (): void => {
       window.open(
         `https://play.google.com/apps/test/${packageName.value}/${buildNumber.value}`
       )
