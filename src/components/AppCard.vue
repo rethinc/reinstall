@@ -1,7 +1,7 @@
 <template>
   <template v-if="!isEditing">
     <h2>{{ packageName }}</h2>
-    <form @submit.prevent="install()">
+    <form @submit.prevent="install()" class="install-form">
       <input-field>
         <label for="versionCode" class="label">Version Code</label>
         <input id="versionCode" class="input" v-model="versionCode" type="text" placeholder="1234"/>
@@ -68,4 +68,13 @@ export default defineComponent({
 .colorizedIcon {
   color: $primary;
 }
+
+.install-form {
+  display: flex;
+  margin-bottom: $spacing-normal;
+  :first-child {
+    margin-right: $spacing-small;
+  }
+}
+
 </style>
