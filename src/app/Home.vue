@@ -61,14 +61,15 @@ export default defineComponent({
 @import '../assets/styles/sizes-and-spacings';
 
 .navigation-wrapper {
-  position: relative;
+  position: fixed;
   padding-bottom: 40px;
+  max-height: 156px;
 
   .navigation-items {
     background: $white;
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 100vw;
     padding: $spacing-normal 0;
   }
 
@@ -82,7 +83,10 @@ export default defineComponent({
 }
 
 .main-content {
-  @include page-indent;
+  padding: 140px 4vw;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .app-list {
