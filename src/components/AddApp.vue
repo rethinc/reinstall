@@ -7,8 +7,8 @@
     <form @submit.prevent="submit()" @reset.prevent="reset()">
       <label for="packageName">Package Name</label>
       <input id="packageName" v-model="packageName" type="text" />
-      <button type="reset">Cancel</button>
-      <button>Add</button>
+      <AppButton type="reset" :appearance="AppButtonAppearance.Transparent">Cancel</AppButton>
+      <AppButton>Add</AppButton>
     </form>
   </template>
 </template>
@@ -19,9 +19,10 @@ import { useRoute, useRouter } from 'vue-router'
 import HowToUse from '@/components/HowToUse.vue'
 import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
 import { addPackage } from '@/app/packageOperations'
+import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
 
 export default defineComponent({
-  components: { HowToUse },
+  components: { AppButton, HowToUse },
   setup() {
     const isAdding = ref<boolean>(false)
 
@@ -52,6 +53,7 @@ export default defineComponent({
     }
 
     return {
+      AppButtonAppearance,
       addApp,
       submit,
       reset,
