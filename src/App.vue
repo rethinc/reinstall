@@ -1,5 +1,8 @@
 <template>
-  <h1>re:install</h1>
+  <icon-view
+    :type="IconRegular.Reinstall_logo"
+    style="width: 200px; height: 200px"
+  />
   <form @submit.prevent="install()">
     <input type="text" v-model="packageName"/>
     <input type="text" v-model="buildNumber" />
