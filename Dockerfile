@@ -1,7 +1,11 @@
-FROM node:16.13.0
+FROM node:17.6.0
+
 WORKDIR /app
-RUN mkdir -p /app/dist
-RUN echo "Hallo Krabbi!" > /app/dist/index.html
+COPY ./package.json ./package.json
+COPY ./package-lock.json ./package-lock.json
+RUN npm install
+COPY . .
+RUN npm run build
 
 FROM nginx:1.21.4-alpine
 ARG version
