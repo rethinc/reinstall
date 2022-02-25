@@ -1,7 +1,6 @@
 <template>
   <div>
-    In order to use re:install make sure you enabled internal App Sharing on
-    Google Play.
+    In order to use re:install make sure you enabled internal App Sharing on <b>Google Play.</b><br>
     <AppButton
       :appearance="AppButtonAppearance.Transparent"
       @click="onShowDetail()"

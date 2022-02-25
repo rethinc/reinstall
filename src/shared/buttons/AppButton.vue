@@ -8,6 +8,7 @@ import { defineComponent, PropType } from 'vue'
 export enum AppButtonAppearance {
   Primary = 'primary',
   Transparent = 'transparent',
+  Secondary = 'secondary',
 }
 
 export default defineComponent({
@@ -36,6 +37,13 @@ button {
   &.primary {
     background: $primary;
     color: $white;
+    border: 2px solid $primary;
+  }
+
+  &.secondary {
+    border: 2px solid $primary;
+    background: $white;
+    color: $primary;
   }
 
   &.transparent {

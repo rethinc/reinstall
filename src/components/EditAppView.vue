@@ -11,7 +11,7 @@
         />
       </input-field>
       <div class="footer-buttons">
-        <AppButton type="reset" :appearance="AppButtonAppearance.Transparent"
+        <AppButton type="reset" :appearance="AppButtonAppearance.Secondary"
           >Cancel</AppButton
         >
         <AppButton>Save</AppButton>
