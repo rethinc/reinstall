@@ -14,12 +14,16 @@
 import { defineComponent, ref } from 'vue'
 import IconView from '@/shared/icons/IconView.vue'
 import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
+import { useRoute } from 'vue-router'
 
 export default defineComponent({
   name: 'App',
   components: { IconView },
   setup() {
-    const packageName = ref<string>('ch.viavelo.customerapp')
+    const route = useRoute()
+    const queryPackage =
+      typeof route.query['package'] === 'string' ? route.query['package'] : ''
+    const packageName = ref<string>(queryPackage)
     const buildNumber = ref<string>('1569')
     const install = (): void => {
       window.open(
