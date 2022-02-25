@@ -6,6 +6,7 @@
 import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
+  name: 'ShareUrl',
   setup() {
     const shareUrl = ref<string>('')
 
