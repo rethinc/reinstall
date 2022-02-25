@@ -5,8 +5,10 @@
   <template v-if="isAdding">
     <HowToUse />
     <form @submit.prevent="submit()" @reset.prevent="reset()">
-      <label for="packageName">Package Name</label>
-      <input id="packageName" v-model="packageName" type="text" />
+      <input-field>
+        <label for="packageName" class="label">Package Name</label>
+        <input id="packageName" class="input" v-model="packageName" type="text" />
+      </input-field>
       <AppButton type="reset" :appearance="AppButtonAppearance.Transparent">Cancel</AppButton>
       <AppButton>Add</AppButton>
     </form>
@@ -20,9 +22,10 @@ import HowToUse from '@/components/HowToUse.vue'
 import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
 import { addPackage } from '@/app/packageOperations'
 import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import InputField from '@/components/InputField.vue'
 
 export default defineComponent({
-  components: { AppButton, HowToUse },
+  components: { InputField, AppButton, HowToUse },
   setup() {
     const isAdding = ref<boolean>(false)
 
