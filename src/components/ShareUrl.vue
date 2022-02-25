@@ -40,9 +40,12 @@ export default defineComponent({
 
 <style scoped lang="scss">
 @import '../assets/styles/fonts';
+@import '../assets/styles/sizes-and-spacings';
 .container {
   display: flex;
   input[type='text'] {
+    padding-left: $spacing-small;
+    padding-right: $spacing-small;
     width: 50vw;
     font-size: $smallfont;
   }
