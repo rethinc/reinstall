@@ -1,6 +1,8 @@
 <template>
-  <input readonly type="text" :value="url" />
-  <AppButton @click="copy()">{{ copyText }}</AppButton>
+  <div class="container">
+    <input readonly type="text" :value="url" />
+    <AppButton @click="copy()">{{ copyText }}</AppButton>
+  </div>
 </template>
 
 <script lang="ts">
@@ -31,3 +33,14 @@ export default defineComponent({
   },
 })
 </script>
+
+<style scoped lang="scss">
+@import '../assets/styles/fonts';
+.container {
+  display: flex;
+  input[type='text'] {
+    max-width: 750px;
+    font-size: $smallfont;
+  }
+}
+</style>
