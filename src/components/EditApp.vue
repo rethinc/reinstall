@@ -1,22 +1,21 @@
 <template>
-  <div class="card-wrapper">
-    <form @submit.prevent="submit()" @reset.prevent="reset()">
-      <label for="packageName">Package Name</label>
-      <input id="packageName" v-model="currentPackageName" type="text" />
-      <button type="reset">Cancel</button>
-      <button>Save</button>
-    </form>
-    <button @click="deleteApp()">Delete</button>
-  </div>
+  <EditAppView
+    :package-name="packageName"
+    :on-save="submit"
+    :on-cancel="reset"
+    :on-delete="deleteApp"
+  />
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref } from 'vue'
+import { defineComponent, PropType } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
+import EditAppView from '@/components/EditAppView.vue'
 
 export default defineComponent({
   name: 'EditApp',
+  components: { EditAppView },
   props: {
     packageName: {
       type: String as PropType<string>,
@@ -25,8 +24,6 @@ export default defineComponent({
   },
   emits: ['cancel'],
   setup(props, { emit }) {
-    const currentPackageName = ref<string>(props.packageName)
-
     const router = useRouter()
 
     const reset = () => {
@@ -47,12 +44,12 @@ export default defineComponent({
       })
     }
 
-    const submit = () => {
+    const submit = (newPackageName: string) => {
       const currentPackageNames = extractPackageNamesFromRoute(route)
       const index = currentPackageNames.indexOf(props.packageName)
       const updatedPackageNames = [
         ...currentPackageNames.slice(0, index),
-        currentPackageName.value,
+        newPackageName,
         ...currentPackageNames.slice(index + 1, currentPackageNames.length),
       ]
       router.push({
@@ -66,7 +63,6 @@ export default defineComponent({
     return {
       submit,
       reset,
-      currentPackageName,
       deleteApp,
     }
   },
