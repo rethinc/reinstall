@@ -21,13 +21,15 @@ export default defineComponent({
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  margin: $spacing-small 0;
   :deep(.label) {
+    flex: 1 1 auto;
     font-size: $smallfont;
     font-weight: 700;
     margin-bottom: $spacing-smallest;
   }
   :deep(.input) {
+    flex: 1 1 auto;
+    width: 100%;
     font-size: $fontSize;
     font-weight: 600;
     padding: $spacing-smaller;

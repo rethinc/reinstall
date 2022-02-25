@@ -12,10 +12,12 @@
           placeholder="1234"
         />
       </input-field>
-      <AppButton>Install</AppButton>
+      <app-button>
+        Install
+      </app-button>
     </form>
     <AppButton :appearance="AppButtonAppearance.Transparent" @click="edit()">
-      <IconView :type="IconColorizable.Edit" />
+      <icon-view :type="IconColorizable.Edit" />
     </AppButton>
   </template>
   <EditApp
@@ -35,7 +37,7 @@ import IconView from '@/shared/icons/IconView.vue'
 
 export default defineComponent({
   name: 'AppCard',
-  components: { AppButton, InputField, EditApp, IconView },
+  components: {IconView, AppButton, InputField, EditApp },
   props: {
     packageName: {
       type: String as PropType<string>,
@@ -81,9 +83,19 @@ export default defineComponent({
 .install-form {
   display: flex;
   margin-bottom: $spacing-normal;
+  align-items: end;
 
   :first-child {
+    flex: 1 1 auto;
     margin-right: $spacing-small;
+    * {
+      align-items: center;
+    }
+  }
+  > :last-child {
+    flex: 1 1 auto;
+    height: 47px;
+    padding: 0 $spacing-normal;
   }
 }
 </style>
