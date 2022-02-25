@@ -1,8 +1,11 @@
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
+import IconView from '@/shared/icons/IconView.vue'
+import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
 
 export default defineComponent({
   name: 'HelloWorld',
+  components: { IconView },
   props: {
     msg: {
       type: String as PropType<string>,
@@ -13,6 +16,8 @@ export default defineComponent({
     const count = ref(0)
     return {
       count,
+      IconColorizable,
+      IconRegular,
     }
   },
 })
@@ -43,6 +48,14 @@ export default defineComponent({
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+  <icon-view
+    :type="IconColorizable.Download"
+    style="width: 16px; height: 16px; color: red"
+  />
+  <icon-view
+    :type="IconRegular.Reinstall_logo"
+    style="width: 200px; height: 200px"
+  />
 </template>
 
 <style scoped lang="scss">
