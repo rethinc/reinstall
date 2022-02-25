@@ -4,6 +4,13 @@ Install specific android app versions easily
 
 ## Development
 
+Install nvm [https://github.com/nvm-sh/nvm#installing-and-updating](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Install node with version used in project
+```
+nvm install
+```
+
 Run app locally in development mode
 ```
 npm run dev
