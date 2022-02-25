@@ -1,10 +1,10 @@
 <template>
   <input readonly type="text" :value="url" />
-  <button @click="copy()">Copy</button>
+  <button @click="copy()">{{ copyText }}</button>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent, PropType, ref } from 'vue'
 
 export default defineComponent({
   name: 'ShareUrl',
@@ -15,11 +15,14 @@ export default defineComponent({
     },
   },
   setup(props) {
+    const copyText = ref<string>('Copy')
     const copy = () => {
       navigator.clipboard.writeText(props.url)
+      copyText.value = 'Copied'
     }
     return {
       copy,
+      copyText,
     }
   },
 })
