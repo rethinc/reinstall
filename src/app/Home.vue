@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
 import IconView from '@/shared/icons/IconView.vue'
 import AddApp from '@/components/AddApp.vue'
 import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
@@ -28,8 +28,18 @@ export default defineComponent({
       typeof route.query['packagename'] === 'string'
         ? route.query['packagename']
         : ''
+
     const packageName = ref<string>(queryPackage)
     const buildNumber = ref<string>('1569')
+
+    watch(route, () => {
+      const newQueryPackage =
+        typeof route.query['packagename'] === 'string'
+          ? route.query['packagename']
+          : ''
+      packageName.value = newQueryPackage
+    })
+
     const install = (): void => {
       window.open(
         `https://play.google.com/apps/test/${packageName.value}/${buildNumber.value}`
