@@ -29,6 +29,15 @@ Run jest test runner in watch mode
 npm run test
 ```
 
+## SVG Icons
+
+Place colorizable (color will be defined in css) icons in the `assets/icons/colorizable` and others in `assets/icons/regular`
+
+After icon changes generate the icon provider file with the command:
+```
+npm run generate-icons
+```
+
 ## Docker
 
 run docker locally
