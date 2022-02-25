@@ -1,6 +1,10 @@
 <template>
   <div class="card-wrapper">
-    <form class="edit-form" @submit.prevent="save()" @reset.prevent="onCancel()">
+    <form
+      class="edit-form"
+      @submit.prevent="save()"
+      @reset.prevent="onCancel()"
+    >
       <input-field>
         <label for="packageName" class="label">Package Name</label>
         <input
