@@ -1,15 +1,19 @@
 <template>
-  <AppButton @click="share()">Share</AppButton>
+  <AppButton :appearance="AppButtonAppearance.Transparent" @click="share()">
+    <icon-view :type="IconColorizable.Reinstall_share" />
+  </AppButton>
   <ShareUrl v-if="shareUrl" :url="shareUrl" @copy="copied" />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import ShareUrl from '@/components/ShareUrl.vue'
-import AppButton from '@/shared/buttons/AppButton.vue'
+import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import IconView from '@/shared/icons/IconView.vue'
+import { IconColorizable } from '@/shared/icons/IconProvider'
 
 export default defineComponent({
   name: 'ShareButton',
-  components: { AppButton, ShareUrl },
+  components: { IconView, AppButton, ShareUrl },
   setup() {
     const showShareUrl = ref<string | undefined>(undefined)
 
@@ -27,6 +31,8 @@ export default defineComponent({
       shareUrl: showShareUrl,
       share,
       copied,
+      IconColorizable,
+      AppButtonAppearance,
     }
   },
 })

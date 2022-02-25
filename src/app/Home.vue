@@ -1,8 +1,11 @@
 <template>
   <nav class="navigation-wrapper">
     <div class="navigation-items">
-      <icon-view :type="IconRegular.Reinstall_sign" style="height: 60px" />
-      <ShareButton />
+      <div></div>
+      <div>
+        <icon-view id="logo" :type="IconRegular.Reinstall_sign" />
+      </div>
+      <ShareButton id="share" />
     </div>
     <span class="gradient" />
   </nav>
@@ -66,11 +69,21 @@ export default defineComponent({
   max-height: 156px;
 
   .navigation-items {
+    position: relative;
     background: $white;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100vw;
-    padding: $spacing-normal 0;
+    padding: $spacing-smallest $spacing-small;
+
+    #logo {
+      position: absolute;
+      bottom: 0;
+      height: 50px;
+      transform: translateY(50%);
+      z-index: 10;
+    }
   }
 
   .gradient {
