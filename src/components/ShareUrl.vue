@@ -6,6 +6,7 @@
 import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
+  name: 'ShareUrl',
   props: {
     url: {
       type: String as PropType<string>,

@@ -14,6 +14,7 @@ import { defineComponent, PropType, ref } from 'vue'
 import ShareUrl from '@/components/ShareUrl.vue'
 
 export default defineComponent({
+  name: 'AppCard',
   components: { ShareUrl },
   props: {
     packageName: {
