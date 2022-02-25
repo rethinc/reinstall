@@ -43,7 +43,7 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const versionCode = ref<string>('1569')
+    const versionCode = ref<string>('')
 
     const install = (): void => {
       window.open(
