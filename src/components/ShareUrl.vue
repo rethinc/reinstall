@@ -1,21 +1,24 @@
 <template>
-  <div class="container">
-    <input readonly type="text" :value="url" />
-    <AppButton @click="copy()">
+  <div class="sharable-url-wrapper">
+    <input-field>
+      <input readonly class="input" type="text" :value="url" />
+    </input-field>
+    <app-button :appearance="AppButtonAppearance.Primary" @click="copy()">
       <icon-view :type="copyIconType" />
-    </AppButton>
+    </app-button>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
-import AppButton from '@/shared/buttons/AppButton.vue'
+import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
 import IconView from '@/shared/icons/IconView.vue'
 import { IconColorizable } from '@/shared/icons/IconProvider'
+import InputField from '@/components/InputField.vue'
 
 export default defineComponent({
   name: 'ShareUrl',
-  components: { IconView, AppButton },
+  components: { InputField, IconView, AppButton },
   props: {
     url: {
       type: String as PropType<string>,
@@ -33,6 +36,7 @@ export default defineComponent({
     return {
       copy,
       copyIconType,
+      AppButtonAppearance,
     }
   },
 })
@@ -41,13 +45,13 @@ export default defineComponent({
 <style scoped lang="scss">
 @import '../assets/styles/fonts';
 @import '../assets/styles/sizes-and-spacings';
-.container {
+.sharable-url-wrapper {
   display: flex;
-  input[type='text'] {
-    padding-left: $spacing-small;
-    padding-right: $spacing-small;
-    width: 50vw;
-    font-size: $smallfont;
+  font-size: $fontSize;
+
+  > :first-child {
+    flex: 1 1 auto;
+    margin-right: $spacing-smaller;
   }
 }
 </style>

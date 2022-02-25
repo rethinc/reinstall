@@ -3,7 +3,7 @@
     <AppButton :appearance="AppButtonAppearance.Transparent" @click="share()">
       <icon-view :type="IconColorizable.Reinstall_share" />
     </AppButton>
-    <div v-if="shareUrl" class="box">
+    <div v-if="shareUrl" class="sharable-url">
       <card-wrapper>
         <ShareUrl :url="shareUrl" @copy="copied" />
       </card-wrapper>
@@ -48,12 +48,18 @@ export default defineComponent({
 @import '../assets/styles/colors';
 @import '../assets/styles/browser-reset';
 @import '../assets/styles/sizes-and-spacings';
+
 .container {
   position: relative;
-  .box {
-    position: absolute;
-    z-index: 10;
-    right: 0;
-  }
 }
+
+.sharable-url {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  width: 100vw;
+  bottom: 0;
+}
+
 </style>
