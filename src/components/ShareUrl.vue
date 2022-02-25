@@ -1,17 +1,21 @@
 <template>
   <div class="container">
     <input readonly type="text" :value="url" />
-    <AppButton @click="copy()">{{ copyText }}</AppButton>
+    <AppButton @click="copy()">
+      <icon-view :type="copyIconType" />
+    </AppButton>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
 import AppButton from '@/shared/buttons/AppButton.vue'
+import IconView from '@/shared/icons/IconView.vue'
+import { IconColorizable } from '@/shared/icons/IconProvider'
 
 export default defineComponent({
   name: 'ShareUrl',
-  components: { AppButton },
+  components: { IconView, AppButton },
   props: {
     url: {
       type: String as PropType<string>,
@@ -20,15 +24,15 @@ export default defineComponent({
   },
   emits: ['copy'],
   setup(props, { emit }) {
-    const copyText = ref<string>('Copy')
+    const copyIconType = ref<IconColorizable>(IconColorizable.Copy)
     const copy = () => {
       navigator.clipboard.writeText(props.url)
-      copyText.value = 'Copied'
+      copyIconType.value = IconColorizable.Check
       emit('copy')
     }
     return {
       copy,
-      copyText,
+      copyIconType,
     }
   },
 })
@@ -39,7 +43,7 @@ export default defineComponent({
 .container {
   display: flex;
   input[type='text'] {
-    max-width: 750px;
+    width: 50vw;
     font-size: $smallfont;
   }
 }
