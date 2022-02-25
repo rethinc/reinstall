@@ -1,12 +1,23 @@
 <template>
-  <button><slot /></button>
+  <button :class="appearance"><slot /></button>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
+
+export enum AppButtonAppearance {
+  Primary = 'primary',
+  Transparent = 'transparent',
+}
 
 export default defineComponent({
   name: 'AppButton',
+  props: {
+    appearance: {
+      type: String as PropType<AppButtonAppearance>,
+      default: AppButtonAppearance.Primary,
+    },
+  },
 })
 </script>
 
@@ -16,11 +27,20 @@ export default defineComponent({
 @import '../../assets/styles/fonts';
 
 button {
-  background: $primary;
   border: none;
-  color: $white;
   padding: $spacing-small;
   font-size: $smallfont;
   font-weight: $fontWeightBold;
+  cursor: pointer;
+
+  &.primary {
+    background: $primary;
+    color: $white;
+  }
+
+  &.transparent {
+    background: transparent;
+    color: $primary;
+  }
 }
 </style>
