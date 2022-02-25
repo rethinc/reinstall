@@ -61,5 +61,4 @@ export default defineComponent({
   width: 100vw;
   bottom: 0;
 }
-
 </style>
