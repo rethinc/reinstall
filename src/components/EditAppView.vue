@@ -1,6 +1,6 @@
 <template>
   <div class="card-wrapper">
-    <form @submit.prevent="save()" @reset.prevent="onCancel()">
+    <form class="edit-form" @submit.prevent="save()" @reset.prevent="onCancel()">
       <input-field>
         <label for="packageName" class="label">Package Name</label>
         <input
@@ -78,8 +78,12 @@ export default defineComponent({
 @import '../assets/styles/fonts';
 @import '../assets/styles/sizes-and-spacings';
 
+.edit-form {
+  margin-bottom: $spacing-normal;
+}
+
 .footer-buttons {
-  margin-top: $spacing-small;
+  margin-top: $spacing-smaller;
   display: flex;
   > * {
     flex: 1 1 50%;
@@ -92,7 +96,6 @@ export default defineComponent({
 }
 .delete-container {
   display: flex;
-  margin-top: $spacing-large;
   justify-content: center;
 }
 </style>
