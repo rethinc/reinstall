@@ -27,6 +27,7 @@ export default defineComponent({
     }
 
     const submit = () => {
+      isAdding.value = false
       router.push({
         path: '/',
         query: { packagename: packageName.value },
