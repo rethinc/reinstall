@@ -34,6 +34,7 @@ export default defineComponent({
     font-weight: 600;
     padding: $spacing-smaller;
     border: solid 2px $primary;
+    border-radius: 0;
   }
 }
 </style>
