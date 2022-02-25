@@ -1,10 +1,7 @@
 <template>
   <h1>ShareUrl component</h1>
 
-  <h2>Basic state</h2>
-  <div>
-    <share-url url="https://www.rethinc.ch" />
-  </div>
+  <share-url url="https://www.rethinc.ch" />
 </template>
 
 <script lang="ts">
@@ -16,14 +13,3 @@ export default defineComponent({
   components: { ShareUrl },
 })
 </script>
-
-<style scoped lang="scss">
-.icon {
-  width: 50px;
-  height: 50px;
-}
-
-button {
-  margin-bottom: 20px;
-}
-</style>
