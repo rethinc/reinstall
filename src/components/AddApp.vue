@@ -14,10 +14,12 @@
           type="text"
         />
       </input-field>
-      <AppButton type="reset" :appearance="AppButtonAppearance.Transparent"
-        >Cancel</AppButton
-      >
-      <AppButton>Add</AppButton>
+      <div class="footer-buttons">
+        <AppButton type="reset" :appearance="AppButtonAppearance.Transparent"
+          >Cancel</AppButton
+        >
+        <AppButton>Add</AppButton>
+      </div>
     </form>
   </template>
 </template>
@@ -78,4 +80,17 @@ export default defineComponent({
 @import '../assets/styles/colors';
 @import '../assets/styles/fonts';
 @import '../assets/styles/sizes-and-spacings';
+
+.footer-buttons {
+  display: flex;
+
+  > * {
+    flex: 1 1 50%;
+    margin-right: 10px;
+  }
+
+  :last-child {
+    margin-right: 0;
+  }
+}
 </style>
