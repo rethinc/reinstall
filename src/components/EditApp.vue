@@ -6,6 +6,7 @@
       <button type="reset">Cancel</button>
       <button>Edit</button>
     </form>
+    <button @click="deleteApp()">Delete</button>
   </div>
 </template>
 
@@ -33,20 +34,27 @@ export default defineComponent({
 
     const route = useRoute()
 
-    const submit = () => {
+    const deleteApp = () => {
       const currentPackageNams = extractPackageNamesFromRoute(route)
       router.push({
         path: '/',
         query: {
-          packagename: [...currentPackageNams, currentPackageName.value],
+          packagename: currentPackageNams.filter(
+            (p) => p !== props.packageName
+          ),
         },
       })
+    }
+
+    const submit = () => {
+      console.log('Edit')
     }
 
     return {
       submit,
       reset,
       currentPackageName,
+      deleteApp,
     }
   },
 })

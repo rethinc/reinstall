@@ -1,17 +1,23 @@
 <template>
-  <h1>{{ packageName }}</h1>
-  <form @submit.prevent="install()">
-    <label for="versionCode">Version Code</label>
-    <input id="versionCode" v-model="versionCode" type="text" />
-    <button>Install</button>
-  </form>
+  <template v-if="!isEditing">
+    <h1>{{ packageName }}</h1>
+    <form @submit.prevent="install()">
+      <label for="versionCode">Version Code</label>
+      <input id="versionCode" v-model="versionCode" type="text" />
+      <button>Install</button>
+    </form>
+    <button @click="edit()">Edit</button>
+  </template>
+  <EditApp v-if="isEditing" :package-name="packageName" />
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref } from 'vue'
+import { defineComponent, onMounted, PropType, ref } from 'vue'
+import EditApp from '@/components/EditApp.vue'
 
 export default defineComponent({
   name: 'AppCard',
+  components: { EditApp },
   props: {
     packageName: {
       type: String as PropType<string>,
@@ -26,10 +32,21 @@ export default defineComponent({
         `https://play.google.com/apps/test/${props.packageName}/${versionCode.value}`
       )
     }
+    const isEditing = ref<boolean>(false)
+
+    const edit = (): void => {
+      isEditing.value = true
+    }
+
+    onMounted(() => {
+      isEditing.value = false
+    })
 
     return {
+      isEditing,
       versionCode,
       install,
+      edit,
     }
   },
 })
