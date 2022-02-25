@@ -1,23 +1,24 @@
 <template>
-  <template v-if="state === ViewState.INITIAL">
-    <button>+</button>
+  <template v-if="!isAdding">
+    <button @click="addApp()">+</button>
   </template>
+  <template v-if="isAdding"> Adding </template>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 
-enum ViewState {
-  ADDING,
-  INITIAL,
-}
-
 export default defineComponent({
   setup() {
-    const state = ref<ViewState>(ViewState.INITIAL)
+    const isAdding = ref<boolean>(false)
+
+    const addApp = () => {
+      isAdding.value = true
+    }
 
     return {
-      state,
+      addApp,
+      isAdding,
     }
   },
 })
