@@ -1,8 +1,6 @@
 <template>
   <input readonly type="text" :value="url" />
-  <button @click="copy()">
-    Copy
-  </button>
+  <button @click="copy()">Copy</button>
 </template>
 
 <script lang="ts">
