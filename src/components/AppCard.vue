@@ -85,7 +85,7 @@ export default defineComponent({
 
   :first-child {
     flex: 1 1 auto;
-    margin-right: $spacing-small;
+    margin-right: $spacing-smaller;
     * {
       align-items: center;
     }
