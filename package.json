@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "dependencies": {
     "vue": "^3.2.25"
