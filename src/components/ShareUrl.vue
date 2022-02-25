@@ -14,11 +14,13 @@ export default defineComponent({
       required: true,
     },
   },
-  setup(props) {
+  emits: ['copy'],
+  setup(props, { emit }) {
     const copyText = ref<string>('Copy')
     const copy = () => {
       navigator.clipboard.writeText(props.url)
       copyText.value = 'Copied'
+      emit('copy')
     }
     return {
       copy,

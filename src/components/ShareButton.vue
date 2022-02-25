@@ -1,6 +1,6 @@
 <template>
   <button @click="share()">Share</button>
-  <ShareUrl v-if="shareUrl" :url="shareUrl" />
+  <ShareUrl v-if="shareUrl" :url="shareUrl" @copy="copied" />
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
@@ -10,15 +10,22 @@ export default defineComponent({
   name: 'ShareButton',
   components: { ShareUrl },
   setup() {
-    const shareUrl = ref<string | undefined>(undefined)
+    const showShareUrl = ref<string | undefined>(undefined)
 
     const share = () => {
-      shareUrl.value = window.location.href
+      showShareUrl.value = window.location.href
+    }
+
+    const copied = () => {
+      setTimeout(() => {
+        showShareUrl.value = undefined
+      }, 2000)
     }
 
     return {
-      shareUrl,
+      shareUrl: showShareUrl,
       share,
+      copied,
     }
   },
 })
