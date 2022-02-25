@@ -1,5 +1,15 @@
 <template>
-  <div class="textblock">
+  <div>
+    In order to use re:install make sure you enabled internal App Sharing on
+    Google Play.
+    <AppButton
+      :appearance="AppButtonAppearance.Transparent"
+      @click="onShowDetail()"
+    >
+      Show me how
+    </AppButton>
+  </div>
+  <div v-if="showDetail" class="textblock">
     <h2>Prerequisites</h2>
     <h3>Pushing packages to google play</h3>
     <p>
@@ -30,10 +40,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
+import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
 
 export default defineComponent({
   name: 'HowToUse',
+  components: { AppButton },
+  setup() {
+    const showDetail = ref<boolean>(false)
+
+    const onShowDetail = () => {
+      showDetail.value = true
+    }
+
+    return {
+      AppButtonAppearance,
+      onShowDetail,
+      showDetail,
+    }
+  },
 })
 </script>
 
