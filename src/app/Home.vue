@@ -17,27 +17,29 @@ import { defineComponent, ref, watch } from 'vue'
 import IconView from '@/shared/icons/IconView.vue'
 import AddApp from '@/components/AddApp.vue'
 import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
-import { useRoute } from 'vue-router'
+import { RouteLocationNormalizedLoaded, useRoute } from 'vue-router'
 
 export default defineComponent({
   name: 'App',
   components: { IconView, AddApp },
   setup() {
     const route = useRoute()
-    const queryPackage =
-      typeof route.query['packagename'] === 'string'
+    const extractPackageName = (
+      route: RouteLocationNormalizedLoaded
+    ): string | undefined => {
+      return typeof route.query['packagename'] === 'string'
         ? route.query['packagename']
-        : ''
+        : undefined
+    }
 
-    const packageName = ref<string>(queryPackage)
+    const packageName = ref<string>(extractPackageName(route) ?? '')
     const buildNumber = ref<string>('1569')
 
     watch(route, () => {
-      const newQueryPackage =
-        typeof route.query['packagename'] === 'string'
-          ? route.query['packagename']
-          : ''
-      packageName.value = newQueryPackage
+      const newQueryPackage = extractPackageName(route)
+      if (newQueryPackage) {
+        packageName.value = newQueryPackage
+      }
     })
 
     const install = (): void => {
