@@ -4,7 +4,7 @@
       <label for="packageName">Package Name</label>
       <input id="packageName" v-model="currentPackageName" type="text" />
       <button type="reset">Cancel</button>
-      <button>Edit</button>
+      <button>Save</button>
     </form>
     <button @click="deleteApp()">Delete</button>
   </div>
@@ -29,17 +29,17 @@ export default defineComponent({
     const router = useRouter()
 
     const reset = () => {
-      console.log('resetting')
+      console.log('cancel')
     }
 
     const route = useRoute()
 
     const deleteApp = () => {
-      const currentPackageNams = extractPackageNamesFromRoute(route)
+      const currentPackageNames = extractPackageNamesFromRoute(route)
       router.push({
         path: '/',
         query: {
-          packagename: currentPackageNams.filter(
+          packagename: currentPackageNames.filter(
             (p) => p !== props.packageName
           ),
         },
@@ -47,7 +47,19 @@ export default defineComponent({
     }
 
     const submit = () => {
-      console.log('Edit')
+      const currentPackageNames = extractPackageNamesFromRoute(route)
+      const index = currentPackageNames.indexOf(props.packageName)
+      const updatedPackageNames = [
+        ...currentPackageNames.slice(0, index),
+        currentPackageName.value,
+        ...currentPackageNames.slice(index + 1, currentPackageNames.length),
+      ]
+      router.push({
+        path: '/',
+        query: {
+          packagename: updatedPackageNames,
+        },
+      })
     }
 
     return {
