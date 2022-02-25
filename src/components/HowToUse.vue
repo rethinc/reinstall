@@ -1,6 +1,7 @@
 <template>
   <div class="guide">
-    In order to use re:install make sure you enabled internal App Sharing on <b>Google Play.</b><br>
+    In order to use re:install make sure you enabled internal App Sharing on
+    <b>Google Play.</b><br />
     <AppButton
       :appearance="AppButtonAppearance.Textlink"
       @click="onShowDetail()"
@@ -41,11 +42,10 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
 import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
-import IconView from '@/shared/icons/IconView.vue'
 
 export default defineComponent({
   name: 'HowToUse',
-  components: {IconView, AppButton },
+  components: { AppButton },
   setup() {
     const showDetail = ref<boolean>(false)
 
