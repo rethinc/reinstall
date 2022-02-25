@@ -4,6 +4,7 @@ import ShareUrlExample from './examples/components/ShareUrlExample.vue'
 import ShareButtonExample from './examples/components/ShareButtonExample.vue'
 import AppCardExample from './examples/components/AppCardExample.vue'
 import HowToUseExample from './examples/components/HowToUseExample.vue'
+import EditAppExample from './examples/components/EditAppExample.vue'
 
 export interface Example {
   name: string
@@ -19,6 +20,7 @@ export const examples = new Map<string, Example[]>([
       { name: 'HowToUse', component: HowToUseExample },
       { name: 'ShareButton', component: ShareButtonExample },
       { name: 'ShareUrl', component: ShareUrlExample },
+      { name: 'EditApp', component: EditAppExample },
     ],
   ],
 ])
