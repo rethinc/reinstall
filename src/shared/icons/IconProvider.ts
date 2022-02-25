@@ -1,6 +1,7 @@
 import check from '@/assets/icons/colorizable/check.svg?raw'
 import copy from '@/assets/icons/colorizable/copy.svg?raw'
 import edit from '@/assets/icons/colorizable/edit.svg?raw'
+import plus from '@/assets/icons/colorizable/plus.svg?raw'
 import reinstall_share from '@/assets/icons/colorizable/reinstall_share.svg?raw'
 import trash from '@/assets/icons/colorizable/trash.svg?raw'
 
@@ -11,6 +12,7 @@ export enum IconColorizable {
   Check = 'IconColorizable_Check',
   Copy = 'IconColorizable_Copy',
   Edit = 'IconColorizable_Edit',
+  Plus = 'IconColorizable_Plus',
   Reinstall_share = 'IconColorizable_Reinstall_share',
   Trash = 'IconColorizable_Trash',
 }
@@ -32,6 +34,9 @@ export const iconByType = (iconType: IconType): string => {
 
     case IconColorizable.Edit:
       return edit
+
+    case IconColorizable.Plus:
+      return plus
 
     case IconColorizable.Reinstall_share:
       return reinstall_share

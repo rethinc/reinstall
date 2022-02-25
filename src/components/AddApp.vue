@@ -1,6 +1,8 @@
 <template>
   <template v-if="!isAdding">
-    <button @click="addApp()">+</button>
+    <AppButton :appearance="AppButtonAppearance.Transparent" @click="addApp()">
+      <icon-view :type="IconColorizable.Plus" />
+    </AppButton>
   </template>
   <template v-if="isAdding">
     <HowToUse />
@@ -32,9 +34,11 @@ import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute
 import { addPackage } from '@/app/packageOperations'
 import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
 import InputField from '@/components/InputField.vue'
+import IconView from '@/shared/icons/IconView.vue'
+import { IconColorizable } from '@/shared/icons/IconProvider'
 
 export default defineComponent({
-  components: { InputField, AppButton, HowToUse },
+  components: { IconView, InputField, AppButton, HowToUse },
   setup() {
     const isAdding = ref<boolean>(false)
 
@@ -71,6 +75,7 @@ export default defineComponent({
       reset,
       isAdding,
       packageName,
+      IconColorizable,
     }
   },
 })
