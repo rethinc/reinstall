@@ -39,8 +39,21 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 @import '../assets/styles/fonts';
+@import '../assets/styles/sizes-and-spacings';
 
 .textblock {
   @include typography-default;
+
+  h2 {
+    margin: $spacing-normal 0 $spacing-smaller;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    margin-bottom: $spacing-smaller;
+  }
 }
 </style>
