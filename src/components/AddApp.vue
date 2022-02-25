@@ -7,9 +7,16 @@
     <form @submit.prevent="submit()" @reset.prevent="reset()">
       <input-field>
         <label for="packageName" class="label">Package Name</label>
-        <input id="packageName" class="input" v-model="packageName" type="text" />
+        <input
+          id="packageName"
+          v-model="packageName"
+          class="input"
+          type="text"
+        />
       </input-field>
-      <AppButton type="reset" :appearance="AppButtonAppearance.Transparent">Cancel</AppButton>
+      <AppButton type="reset" :appearance="AppButtonAppearance.Transparent"
+        >Cancel</AppButton
+      >
       <AppButton>Add</AppButton>
     </form>
   </template>

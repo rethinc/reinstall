@@ -1,10 +1,16 @@
 <template>
   <template v-if="!isEditing">
     <h2>{{ packageName }}</h2>
-    <form @submit.prevent="install()" class="install-form">
+    <form class="install-form" @submit.prevent="install()">
       <input-field>
         <label for="versionCode" class="label">Version Code</label>
-        <input id="versionCode" class="input" v-model="versionCode" type="text" placeholder="1234"/>
+        <input
+          id="versionCode"
+          v-model="versionCode"
+          class="input"
+          type="text"
+          placeholder="1234"
+        />
       </input-field>
       <button>Install</button>
     </form>
@@ -72,9 +78,9 @@ export default defineComponent({
 .install-form {
   display: flex;
   margin-bottom: $spacing-normal;
+
   :first-child {
     margin-right: $spacing-small;
   }
 }
-
 </style>
