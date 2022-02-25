@@ -5,3 +5,17 @@ $smallfont: 0.78rem;
 $fontFamily: 'Source Sans Pro', sans-serif;
 
 $lineHeight: 1.44;
+
+@mixin typography-default {
+  h1, h2, h3 {
+    font-size: $largefont;
+    font-weight: 700;
+  }
+  p {
+    font-size: $fontSize;
+    font-weight: 400;
+    b {
+      font-weight: 600;
+    }
+  }
+}
