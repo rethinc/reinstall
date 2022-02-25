@@ -12,6 +12,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   setup() {
@@ -19,12 +20,17 @@ export default defineComponent({
 
     const packageName = ref<string>('')
 
+    const router = useRouter()
+
     const addApp = () => {
       isAdding.value = true
     }
 
     const submit = () => {
-      console.log('packagename', packageName.value)
+      router.push({
+        path: '/',
+        query: { packageName: packageName.value },
+      })
     }
 
     return {

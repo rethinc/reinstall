@@ -25,7 +25,9 @@ export default defineComponent({
   setup() {
     const route = useRoute()
     const queryPackage =
-      typeof route.query['package'] === 'string' ? route.query['package'] : ''
+      typeof route.query['packageName'] === 'string'
+        ? route.query['packageName']
+        : ''
     const packageName = ref<string>(queryPackage)
     const buildNumber = ref<string>('1569')
     const install = (): void => {
