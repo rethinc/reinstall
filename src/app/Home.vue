@@ -8,17 +8,20 @@
     <input v-model="buildNumber" type="text" />
     <button>Install</button>
   </form>
+
+  <AddApp />
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import IconView from '@/shared/icons/IconView.vue'
+import AddApp from '@/components/AddApp.vue'
 import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
 import { useRoute } from 'vue-router'
 
 export default defineComponent({
   name: 'App',
-  components: { IconView },
+  components: { IconView, AddApp },
   setup() {
     const route = useRoute()
     const queryPackage =
