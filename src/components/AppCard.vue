@@ -7,14 +7,16 @@
         <input
           id="versionCode"
           v-model="versionCode"
-          class="input"
           type="text"
+          class="input"
           placeholder="1234"
         />
       </input-field>
-      <button>Install</button>
+      <AppButton>Install</AppButton>
     </form>
-    <button @click="edit()">Edit</button>
+    <AppButton :appearance="AppButtonAppearance.Transparent" @click="edit()">
+      <IconView :type="IconColorizable.Edit" />
+    </AppButton>
   </template>
   <EditApp
     v-if="isEditing"
@@ -27,10 +29,13 @@
 import { defineComponent, PropType, ref } from 'vue'
 import EditApp from '@/components/EditApp.vue'
 import InputField from '@/components/InputField.vue'
+import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import { IconColorizable } from '@/shared/icons/IconProvider'
+import IconView from '@/shared/icons/IconView.vue'
 
 export default defineComponent({
   name: 'AppCard',
-  components: { InputField, EditApp },
+  components: { AppButton, InputField, EditApp, IconView },
   props: {
     packageName: {
       type: String as PropType<string>,
@@ -56,6 +61,8 @@ export default defineComponent({
     }
 
     return {
+      AppButtonAppearance,
+      IconColorizable,
       isEditing,
       closeEditing,
       versionCode,
@@ -70,10 +77,6 @@ export default defineComponent({
 @import '../assets/styles/colors';
 @import '../assets/styles/browser-reset';
 @import '../assets/styles/sizes-and-spacings';
-
-.colorizedIcon {
-  color: $primary;
-}
 
 .install-form {
   display: flex;
