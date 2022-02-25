@@ -18,6 +18,7 @@ import { defineComponent, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import HowToUse from '@/components/HowToUse.vue'
 import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
+import { addPackage } from '@/app/packageOperations'
 
 export default defineComponent({
   components: { HowToUse },
@@ -41,11 +42,11 @@ export default defineComponent({
 
     const submit = () => {
       isAdding.value = false
-      const currentPackageNams = extractPackageNamesFromRoute(route)
+      const currentPackageNames = extractPackageNamesFromRoute(route)
       router.push({
         path: '/',
         query: {
-          packagename: [...currentPackageNams, packageName.value],
+          packagename: addPackage(currentPackageNames, packageName.value),
         },
       })
     }

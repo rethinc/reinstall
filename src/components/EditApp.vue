@@ -12,6 +12,7 @@ import { defineComponent, PropType } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
 import EditAppView from '@/components/EditAppView.vue'
+import { deletePackage, replacePackage } from '@/app/packageOperations'
 
 export default defineComponent({
   name: 'EditApp',
@@ -32,26 +33,23 @@ export default defineComponent({
     const route = useRoute()
 
     const deleteApp = () => {
-      const currentPackageNames = extractPackageNamesFromRoute(route)
+      const existingPackageNames = extractPackageNamesFromRoute(route)
       props.onClose()
       router.push({
         path: '/',
         query: {
-          packagename: currentPackageNames.filter(
-            (p) => p !== props.packageName
-          ),
+          packagename: deletePackage(existingPackageNames, props.packageName),
         },
       })
     }
 
     const submit = (newPackageName: string) => {
-      const currentPackageNames = extractPackageNamesFromRoute(route)
-      const index = currentPackageNames.indexOf(props.packageName)
-      const updatedPackageNames = [
-        ...currentPackageNames.slice(0, index),
-        newPackageName,
-        ...currentPackageNames.slice(index + 1, currentPackageNames.length),
-      ]
+      const existingPackageNames = extractPackageNamesFromRoute(route)
+      const updatedPackageNames = replacePackage(
+        existingPackageNames,
+        props.packageName,
+        newPackageName
+      )
       props.onClose()
       router.push({
         path: '/',
