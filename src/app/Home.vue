@@ -20,7 +20,6 @@
       <AddApp />
     </card-wrapper>
     <div class="footer-information">
-
       <a class="footer-link" href="https://rethinc.ch" target="_blank">
         <span>made by re:thinc</span>
         <icon-view :type="IconColorizable.Rethinc" />
@@ -122,7 +121,7 @@ export default defineComponent({
 }
 
 .footer-information {
-  margin: $spacing-huge 0 $spacing-normal ;
+  margin: $spacing-huge 0 $spacing-normal;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -134,7 +133,7 @@ export default defineComponent({
     justify-content: center;
     align-items: center;
     align-content: center;
-    color: #3DAD94;
+    color: #3dad94;
     text-decoration: none;
 
     :first-child {
