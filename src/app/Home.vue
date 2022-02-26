@@ -2,13 +2,14 @@
   <nav class="navigation-wrapper">
     <div class="navigation-items">
       <div></div>
-      <div>
-        <icon-view id="logo" :type="IconRegular.Reinstall_sign" />
-      </div>
       <ShareButton id="share" />
     </div>
     <span class="gradient" />
   </nav>
+  <div class="sticky-effect"></div>
+  <div class="sticky-logo">
+    <icon-view id="logo" :type="IconRegular.Reinstall_sign" />
+  </div>
   <div class="main-content">
     <div class="app-list">
       <card-wrapper v-for="packageName in packageNames" :key="packageName">
@@ -76,14 +77,6 @@ export default defineComponent({
     justify-content: space-between;
     width: 100vw;
     padding: $spacing-small $spacing-small;
-
-    #logo {
-      position: absolute;
-      bottom: 0;
-      height: 50px;
-      transform: translateY(50%);
-      z-index: 10;
-    }
   }
 
   .gradient {
@@ -95,8 +88,21 @@ export default defineComponent({
   }
 }
 
+.sticky-logo {
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  top: 3px;
+  height: 50px;
+  z-index: 10;
+}
+
+.sticky-effect {
+  height: 25px;
+}
+
 .main-content {
-  padding: 100px 4vw;
+  padding: $spacing-small 4vw;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
