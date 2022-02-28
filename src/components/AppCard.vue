@@ -1,6 +1,8 @@
 <template>
   <template v-if="!isEditing">
-    <h2>{{ packageName }}</h2>
+    <div class="app-title-wrapper">
+      <h2 class="app-title">{{ packageName }}</h2>
+    </div>
     <form class="install-form" @submit.prevent="install()">
       <input-field>
         <label for="versionCode" class="label">Version Code</label>
@@ -96,6 +98,24 @@ export default defineComponent({
     padding: 0 $spacing-normal;
     font-size: $smallfont;
     font-weight: $fontWeightBold;
+  }
+}
+
+.app-title-wrapper {
+  position: relative;
+
+  .app-title {
+    overflow: auto;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: $spacing-large;
+    background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
   }
 }
 
