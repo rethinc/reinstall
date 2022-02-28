@@ -69,7 +69,7 @@ import { IconColorizable } from '@/shared/icons/IconProvider'
 
 export default defineComponent({
   name: 'HowToUse',
-  components: {IconView, AppButton },
+  components: { IconView, AppButton },
   setup() {
     const showDetail = ref<boolean>(false)
 
