@@ -82,7 +82,7 @@ export default defineComponent({
     flex-direction: row;
     justify-content: space-between;
     width: 100vw;
-    padding: $spacing-small $spacing-small;
+    padding: $spacing-small 4vw;
   }
 
   .gradient {
