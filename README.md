@@ -68,3 +68,9 @@ docker run -dp 8080:80 --name reinstall reinstall
 ```
 
 open browser at [http://localhost:8080](http://localhost:8080)
+
+
+## Buy us a coffee
+
+https://www.buymeacoffee.com/rethinc
+
