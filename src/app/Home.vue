@@ -98,7 +98,9 @@ export default defineComponent({
   pointer-events: none;
   position: sticky;
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  margin: 0 auto;
   top: 3px;
   height: 50px;
   z-index: 10;
