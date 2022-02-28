@@ -20,4 +20,9 @@ export default defineComponent({
 body {
   background: $accent;
 }
+
+*:focus {
+  box-shadow: 0 0 0 3px $accent;
+  outline: $accent;
+}
 </style>
