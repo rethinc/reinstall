@@ -26,6 +26,20 @@
       added in google play console under: Setup -> internal app sharing -> Email
       list.
     </p>
+    <h3>Enable internal app sharing on phone</h3>
+    <p>
+      On the phone on which you want to install your applications you need to
+      enable internal app sharing. You can do this as follows:
+    </p>
+    <ol>
+      <li>Open the Google Play Store app.</li>
+      <li>In the main menu tap on Settings.</li>
+      <li>Tap on the Play Store version (in the About section) 7 times.</li>
+      <li>
+        After this you will see the Internal app sharing setting appear. Make
+        sure it is enabled.
+      </li>
+    </ol>
     <h2>How to use</h2>
     <p>
       Once both the prerequisites are fulfilled, you are ready to use
