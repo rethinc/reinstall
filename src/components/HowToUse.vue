@@ -28,7 +28,7 @@
     <p>
       In order to enable internal app sharing, create at least one email list
       with at least one email from testers google account. The email list can be
-      added in the Google Play Console under: Setup -> internal app sharing ->
+      added in the Google Play Console under: Setup ➔ internal app sharing ➔
       Email list.
     </p>
     <h3>Enable internal app sharing on phone</h3>
@@ -127,6 +127,15 @@ export default defineComponent({
 
   h3 {
     margin-bottom: $spacing-smaller;
+  }
+
+  ol {
+    line-height: 2;
+    padding-inline: 1rem;
+
+    li::marker {
+      font-weight: 600;
+    }
   }
 }
 </style>
