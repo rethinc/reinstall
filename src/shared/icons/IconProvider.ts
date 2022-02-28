@@ -1,4 +1,5 @@
 import check from '@/assets/icons/colorizable/check.svg?raw'
+import chevron_down from '@/assets/icons/colorizable/chevron_down.svg?raw'
 import copy from '@/assets/icons/colorizable/copy.svg?raw'
 import edit from '@/assets/icons/colorizable/edit.svg?raw'
 import plus from '@/assets/icons/colorizable/plus.svg?raw'
@@ -11,6 +12,7 @@ import reinstall_sign from '@/assets/icons/regular/reinstall_sign.svg?raw'
 
 export enum IconColorizable {
   Check = 'IconColorizable_Check',
+  Chevron_down = 'IconColorizable_Chevron_down',
   Copy = 'IconColorizable_Copy',
   Edit = 'IconColorizable_Edit',
   Plus = 'IconColorizable_Plus',
@@ -30,6 +32,9 @@ export const iconByType = (iconType: IconType): string => {
   switch (iconType) {
     case IconColorizable.Check:
       return check
+
+    case IconColorizable.Chevron_down:
+      return chevron_down
 
     case IconColorizable.Copy:
       return copy

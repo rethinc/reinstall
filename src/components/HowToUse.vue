@@ -10,6 +10,11 @@
       @click="onShowDetail()"
     >
       {{ showDetailButtonContent }}
+      <icon-view
+        class="show-more-icon"
+        :class="{ 'icon-hide': showDetail }"
+        :type="IconColorizable.Chevron_down"
+      />
     </AppButton>
   </div>
   <div v-if="showDetail" class="textblock guide">
@@ -59,10 +64,12 @@
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
 import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import IconView from '@/shared/icons/IconView.vue'
+import { IconColorizable } from '@/shared/icons/IconProvider'
 
 export default defineComponent({
   name: 'HowToUse',
-  components: { AppButton },
+  components: {IconView, AppButton },
   setup() {
     const showDetail = ref<boolean>(false)
 
@@ -79,6 +86,7 @@ export default defineComponent({
       onShowDetail,
       showDetail,
       showDetailButtonContent,
+      IconColorizable,
     }
   },
 })
@@ -92,6 +100,18 @@ export default defineComponent({
   > * {
     margin-bottom: $spacing-small;
   }
+}
+
+.show-more-icon {
+  margin-left: $spacing-smallest;
+
+  .icon-hide {
+    transform: rotate(90deg);
+  }
+}
+
+.icon-hide {
+  transform: rotate(180deg);
 }
 
 .textblock {
