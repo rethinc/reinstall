@@ -95,6 +95,7 @@ export default defineComponent({
 }
 
 .sticky-logo {
+  pointer-events: none;
   position: sticky;
   display: flex;
   justify-content: center;
