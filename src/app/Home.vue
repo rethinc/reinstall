@@ -74,6 +74,7 @@ export default defineComponent({
   position: fixed;
   padding-bottom: 40px;
   max-height: 156px;
+  z-index: 2;
 
   .navigation-items {
     position: relative;
