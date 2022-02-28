@@ -115,7 +115,11 @@ export default defineComponent({
     right: 0;
     bottom: 0;
     width: $spacing-large;
-    background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(
+      270deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 }
 
