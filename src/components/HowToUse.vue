@@ -17,14 +17,14 @@
     <h3>Pushing packages to google play</h3>
     <p>
       You are already able to publish packages with a specific package name and
-      version number to google play.
+      version code to google play.
     </p>
     <h3>Enable internal app sharing</h3>
     <p>
       In order to enable internal app sharing, create at least one email list
       with at least one email from testers google account. The email list can be
-      added in google play console under: Setup -> internal app sharing -> Email
-      list.
+      added in the Google Play Console under: Setup -> internal app sharing ->
+      Email list.
     </p>
     <h3>Enable internal app sharing on phone</h3>
     <p>
@@ -43,15 +43,15 @@
     <h2>How to use</h2>
     <p>
       Once both the prerequisites are fulfilled, you are ready to use
-      re:install. All you have to do is enter your applicationID and appropriate
-      version number in the re:install app on an android phone which is linked
-      to the previously added google account. This will install the app on your
-      phone.
+      re:install. All you have to do is enter your apps package name and
+      appropriate version code in the re:install app on an Android phone which
+      is linked to the previously added Google account. This will install the
+      app on your phone.
     </p>
     <h2>You've got a 404 when installing the app?</h2>
     <p>
-      Check that the email list on your play console internal app sharing
-      contains the email of the signed in google account on the phone.
+      Check that the email list on your Play console internal app sharing
+      contains the email of the signed in Google account on the phone.
     </p>
   </div>
 </template>
