@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <AppButton :appearance="AppButtonAppearance.Transparent" @click="share()">
+      <p class="label">Share</p>
       <icon-view :type="IconColorizable.Reinstall_share" />
     </AppButton>
     <div v-if="shareUrl" class="sharable-url">
@@ -51,6 +52,12 @@ export default defineComponent({
 
 .container {
   position: relative;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  .label {
+    margin-right: $spacing-smaller;
+  }
 }
 
 .sharable-url {
