@@ -38,6 +38,10 @@ button {
   justify-content: center;
   align-items: center;
 
+  &:active {
+    filter: brightness(0.9);
+  }
+
   &.primary {
     background: $primary;
     color: $white;
@@ -54,6 +58,7 @@ button {
     background: transparent;
     color: $primary;
     padding: 0;
+    outline-offset: 0.2rem;
   }
 
   &.textlink {

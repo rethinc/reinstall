@@ -22,7 +22,6 @@ body {
 }
 
 *:focus {
-  box-shadow: 0 0 0 3px $accent;
-  outline: $accent;
+  outline: 4px solid $accent;
 }
 </style>
