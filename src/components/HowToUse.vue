@@ -131,7 +131,7 @@ export default defineComponent({
 
   ol {
     line-height: 2;
-    padding-inline: 1rem;
+    padding-inline: 1.4em;
 
     li::marker {
       font-weight: 600;
