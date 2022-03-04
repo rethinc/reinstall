@@ -58,6 +58,23 @@ After icon changes generate the icon provider file with the command:
 npm run generate-icons
 ```
 
+### Dependencies
+
+Check for updated dependencies
+```
+npx npm-check-updates
+```
+
+Update version in package.json
+```
+npx npm-check-updates -u
+```
+
+Updated modules and package-lock file
+```
+npm update
+```
+
 ## Docker
 
 run docker locally
