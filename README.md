@@ -1,6 +1,6 @@
 # reinstall
 
-Install specific android app versions easily
+🗂 Install specific android app versions easily
 
 https://reinstall.rethinc.ch
 
