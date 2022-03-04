@@ -8,7 +8,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "format": "eslint --fix 'src/**/*.vue' 'view-examples/**/*.vue' 'src/**/*.ts' 'view-examples/**/*.ts'",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.vue",
+    "lint": "eslint .",
     "test": "jest --watch",
     "generate-icons": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/generate-icons.ts",
     "view-examples": "vite -c vite.view-examples.config.ts --port 3001"
