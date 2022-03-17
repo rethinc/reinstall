@@ -25,7 +25,7 @@
       <AppButton
         :appearance="AppButtonAppearance.Transparent"
         @click="onDelete()"
-        ><icon-view :type="IconColorizable.Trash"
+        ><iconView :type="IconColorizable.Trash"
       /></AppButton>
     </div>
   </div>
@@ -37,8 +37,8 @@ import InputField from '@/application/shared/forms/InputField.vue'
 import AppButton, {
   AppButtonAppearance,
 } from '@/application/shared/buttons/AppButton.vue'
-import IconView from '@/shared/icons/IconView.vue'
-import { IconColorizable } from '@/shared/icons/IconProvider'
+import IconView from '@/application/shared/icons/IconView.vue'
+import { IconColorizable } from '@/application/shared/icons/icons'
 
 export default defineComponent({
   name: 'EditApp',

@@ -34,8 +34,8 @@ import InputField from '@/application/shared/forms/InputField.vue'
 import AppButton, {
   AppButtonAppearance,
 } from '@/application/shared/buttons/AppButton.vue'
-import { IconColorizable } from '@/shared/icons/IconProvider'
-import IconView from '@/shared/icons/IconView.vue'
+import { IconColorizable } from '@/application/shared/icons/icons'
+import IconView from '@/application/shared/icons/IconView.vue'
 
 export default defineComponent({
   name: 'AppCard',

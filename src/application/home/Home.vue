@@ -22,7 +22,7 @@
     <div class="footer-information">
       <a class="footer-link" href="https://rethinc.ch" target="_blank">
         <span>made by re:thinc</span>
-        <IconView :type="IconColorizable.Rethinc" />
+        <IconView :type="IconColorizable.Rethinc" class="logo-rethinc" />
       </a>
     </div>
   </div>
@@ -69,6 +69,11 @@ export default defineComponent({
 @import '../../assets/styles/colors';
 @import '../../assets/styles/browser-reset';
 @import '../../assets/styles/sizes-and-spacings';
+
+.logo-rethinc {
+  width: 34px;
+  height: 32px;
+}
 
 .navigation-wrapper {
   position: fixed;

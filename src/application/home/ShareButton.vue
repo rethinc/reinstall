@@ -2,7 +2,7 @@
   <div class="container">
     <AppButton :appearance="AppButtonAppearance.Transparent" @click="share()">
       <p class="label">Share</p>
-      <icon-view :type="IconColorizable.Reinstall_share" />
+      <iconView :type="IconColorizable.ReinstallShare" />
     </AppButton>
     <div v-if="shareUrl" class="sharable-url">
       <card-wrapper>
@@ -17,8 +17,8 @@ import ShareUrl from './ShareUrl.vue'
 import AppButton, {
   AppButtonAppearance,
 } from '@/application/shared/buttons/AppButton.vue'
-import IconView from '@/shared/icons/IconView.vue'
-import { IconColorizable } from '@/shared/icons/IconProvider'
+import IconView from '@/application/shared/icons/IconView.vue'
+import { IconColorizable } from '@/application/shared/icons/icons'
 import CardWrapper from './CardWrapper.vue'
 
 export default defineComponent({

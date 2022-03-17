@@ -10,10 +10,10 @@
       @click="onShowDetail()"
     >
       {{ showDetailButtonContent }}
-      <icon-view
+      <iconView
         class="show-more-icon"
         :class="{ 'icon-hide': showDetail }"
-        :type="IconColorizable.Chevron_down"
+        :type="IconColorizable.ChevronDown"
       />
     </AppButton>
   </div>
@@ -66,8 +66,8 @@ import { computed, defineComponent, ref } from 'vue'
 import AppButton, {
   AppButtonAppearance,
 } from '@/application/shared/buttons/AppButton.vue'
-import IconView from '@/shared/icons/IconView.vue'
-import { IconColorizable } from '@/shared/icons/IconProvider'
+import IconView from '@/application/shared/icons/IconView.vue'
+import { IconColorizable } from '@/application/shared/icons/icons'
 
 export default defineComponent({
   name: 'HowToUse',
@@ -106,6 +106,8 @@ export default defineComponent({
 
 .show-more-icon {
   margin-left: $spacing-smallest;
+  width: 14px;
+  height: 14px;
 
   .icon-hide {
     transform: rotate(90deg);

@@ -1,7 +1,7 @@
 <template>
   <template v-if="!isAdding">
     <AppButton :appearance="AppButtonAppearance.Transparent" @click="addApp()">
-      <icon-view :type="IconColorizable.Plus" />
+      <IconView :type="IconColorizable.Plus" class="icon" />
     </AppButton>
   </template>
   <template v-if="isAdding">
@@ -37,8 +37,8 @@ import AppButton, {
   AppButtonAppearance,
 } from '@/application/shared/buttons/AppButton.vue'
 import InputField from '@/application/shared/forms/InputField.vue'
-import IconView from '@/shared/icons/IconView.vue'
-import { IconColorizable } from '@/shared/icons/IconProvider'
+import IconView from '@/application/shared/icons/IconView.vue'
+import { IconColorizable } from '@/application/shared/icons/icons'
 
 export default defineComponent({
   components: { IconView, InputField, AppButton, HowToUse },
@@ -101,5 +101,9 @@ export default defineComponent({
   :last-child {
     margin-right: 0;
   }
+}
+.icon {
+  width: $icon-size;
+  height: $icon-size;
 }
 </style>
