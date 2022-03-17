@@ -13,8 +13,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/colors';
-@import '../assets/styles/sizes-and-spacings';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/sizes-and-spacings';
 
 .card-wrapper {
   background: $white;

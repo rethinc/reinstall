@@ -13,11 +13,13 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import ShareUrl from '@/components/ShareUrl.vue'
-import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import ShareUrl from './ShareUrl.vue'
+import AppButton, {
+  AppButtonAppearance,
+} from '@/application/shared/buttons/AppButton.vue'
 import IconView from '@/shared/icons/IconView.vue'
 import { IconColorizable } from '@/shared/icons/IconProvider'
-import CardWrapper from '@/components/CardWrapper.vue'
+import CardWrapper from './CardWrapper.vue'
 
 export default defineComponent({
   name: 'ShareButton',
@@ -46,9 +48,9 @@ export default defineComponent({
 })
 </script>
 <style scoped lang="scss">
-@import '../assets/styles/colors';
-@import '../assets/styles/browser-reset';
-@import '../assets/styles/sizes-and-spacings';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/browser-reset';
+@import '../../assets/styles/sizes-and-spacings';
 
 .container {
   position: relative;

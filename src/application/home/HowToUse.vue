@@ -63,7 +63,9 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref } from 'vue'
-import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import AppButton, {
+  AppButtonAppearance,
+} from '@/application/shared/buttons/AppButton.vue'
 import IconView from '@/shared/icons/IconView.vue'
 import { IconColorizable } from '@/shared/icons/IconProvider'
 
@@ -93,8 +95,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/styles/fonts';
-@import '../assets/styles/sizes-and-spacings';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/sizes-and-spacings';
 
 .guide {
   > * {

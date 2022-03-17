@@ -4,7 +4,7 @@
       <h2 class="app-title">{{ packageName }}</h2>
     </div>
     <form class="install-form" @submit.prevent="install()">
-      <input-field>
+      <InputField>
         <label for="versionCode" class="label">Version Code</label>
         <input
           id="versionCode"
@@ -13,8 +13,8 @@
           class="input"
           placeholder="1234"
         />
-      </input-field>
-      <app-button> Install</app-button>
+      </InputField>
+      <AppButton> Install</AppButton>
     </form>
     <AppButton :appearance="AppButtonAppearance.Transparent" @click="edit()">
       <IconView :type="IconColorizable.Edit" class="icon" />
@@ -29,9 +29,11 @@
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
-import EditApp from '@/components/EditApp.vue'
-import InputField from '@/components/InputField.vue'
-import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import EditApp from './EditApp.vue'
+import InputField from '@/application/shared/forms/InputField.vue'
+import AppButton, {
+  AppButtonAppearance,
+} from '@/application/shared/buttons/AppButton.vue'
 import { IconColorizable } from '@/shared/icons/IconProvider'
 import IconView from '@/shared/icons/IconView.vue'
 
@@ -76,9 +78,9 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/colors';
-@import '../assets/styles/browser-reset';
-@import '../assets/styles/sizes-and-spacings';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/browser-reset';
+@import '../../assets/styles/sizes-and-spacings';
 
 .install-form {
   display: flex;

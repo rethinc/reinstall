@@ -1,20 +1,22 @@
 <template>
   <div class="sharable-url-wrapper">
-    <input-field>
+    <InputField>
       <input readonly class="input" type="text" :value="url" />
-    </input-field>
-    <app-button :appearance="AppButtonAppearance.Primary" @click="copy()">
-      <icon-view :type="copyIconType" />
-    </app-button>
+    </InputField>
+    <AppButton :appearance="AppButtonAppearance.Primary" @click="copy()">
+      <IconView :type="copyIconType" />
+    </AppButton>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
-import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import AppButton, {
+  AppButtonAppearance,
+} from '@/application/shared/buttons/AppButton.vue'
 import IconView from '@/shared/icons/IconView.vue'
 import { IconColorizable } from '@/shared/icons/IconProvider'
-import InputField from '@/components/InputField.vue'
+import InputField from '@/application/shared/forms/InputField.vue'
 
 export default defineComponent({
   name: 'ShareUrl',
@@ -43,8 +45,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/fonts';
-@import '../assets/styles/sizes-and-spacings';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/sizes-and-spacings';
 .sharable-url-wrapper {
   display: flex;
   font-size: $fontSize;

@@ -13,9 +13,9 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/colors';
-@import '../assets/styles/sizes-and-spacings';
-@import '../assets/styles/fonts';
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/sizes-and-spacings';
+@import '../../../assets/styles/fonts';
 
 .input-field {
   flex: 1 1 auto;

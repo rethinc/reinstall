@@ -12,13 +12,13 @@
   </div>
   <div class="main-content">
     <div class="app-list">
-      <cardWrapper v-for="packageName in packageNames" :key="packageName">
+      <CardWrapper v-for="packageName in packageNames" :key="packageName">
         <AppCard :package-name="packageName" />
-      </cardWrapper>
+      </CardWrapper>
     </div>
-    <cardWrapper>
+    <CardWrapper>
       <AddApp />
-    </cardWrapper>
+    </CardWrapper>
     <div class="footer-information">
       <a class="footer-link" href="https://rethinc.ch" target="_blank">
         <span>made by re:thinc</span>
@@ -31,13 +31,13 @@
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue'
 import IconView from '@/application/shared/icons/IconView.vue'
-import AddApp from '@/components/AddApp.vue'
+import AddApp from './AddApp.vue'
 import { IconColorizable, IconOriginal } from '@/application/shared/icons/icons'
 import { useRoute } from 'vue-router'
-import AppCard from '@/components/AppCard.vue'
-import ShareButton from '@/components/ShareButton.vue'
-import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
-import CardWrapper from '@/components/CardWrapper.vue'
+import AppCard from './AppCard.vue'
+import ShareButton from './ShareButton.vue'
+import { extractPackageNamesFromRoute } from './extractPackageNamesFromRoute'
+import CardWrapper from './CardWrapper.vue'
 
 export default defineComponent({
   name: 'App',
@@ -66,9 +66,9 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/colors';
-@import '../assets/styles/browser-reset';
-@import '../assets/styles/sizes-and-spacings';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/browser-reset';
+@import '../../assets/styles/sizes-and-spacings';
 
 .navigation-wrapper {
   position: fixed;

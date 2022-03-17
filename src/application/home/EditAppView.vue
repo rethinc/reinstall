@@ -5,7 +5,7 @@
       @submit.prevent="save()"
       @reset.prevent="onCancel()"
     >
-      <input-field>
+      <InputField>
         <label for="packageName" class="label">Package Name</label>
         <input
           id="packageName"
@@ -13,7 +13,7 @@
           class="input"
           type="text"
         />
-      </input-field>
+      </InputField>
       <div class="footer-buttons">
         <AppButton type="reset" :appearance="AppButtonAppearance.Secondary"
           >Cancel</AppButton
@@ -33,8 +33,10 @@
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
-import InputField from '@/components/InputField.vue'
-import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
+import InputField from '@/application/shared/forms/InputField.vue'
+import AppButton, {
+  AppButtonAppearance,
+} from '@/application/shared/buttons/AppButton.vue'
 import IconView from '@/shared/icons/IconView.vue'
 import { IconColorizable } from '@/shared/icons/IconProvider'
 
@@ -78,9 +80,9 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/colors';
-@import '../assets/styles/fonts';
-@import '../assets/styles/sizes-and-spacings';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/sizes-and-spacings';
 
 .edit-form {
   margin-bottom: $spacing-normal;

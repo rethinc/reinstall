@@ -10,9 +10,12 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
-import EditAppView from '@/components/EditAppView.vue'
-import { deletePackage, replacePackage } from '@/app/packageOperations'
+import { extractPackageNamesFromRoute } from './extractPackageNamesFromRoute'
+import EditAppView from './EditAppView.vue'
+import {
+  deletePackage,
+  replacePackage,
+} from '@/application/home/packageOperations'
 
 export default defineComponent({
   name: 'EditApp',

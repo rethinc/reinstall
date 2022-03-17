@@ -7,7 +7,7 @@
   <template v-if="isAdding">
     <HowToUse />
     <form @submit.prevent="submit()" @reset.prevent="reset()">
-      <input-field>
+      <InputField>
         <label for="packageName" class="label">Package Name</label>
         <input
           id="packageName"
@@ -15,7 +15,7 @@
           class="input"
           type="text"
         />
-      </input-field>
+      </InputField>
       <div class="footer-buttons">
         <AppButton type="reset" :appearance="AppButtonAppearance.Secondary"
           >Cancel</AppButton
@@ -29,11 +29,14 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import HowToUse from '@/components/HowToUse.vue'
-import { extractPackageNamesFromRoute } from '@/app/extractPackageNamesFromRoute'
-import { addPackage } from '@/app/packageOperations'
-import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
-import InputField from '@/components/InputField.vue'
+import { extractPackageNamesFromRoute } from './extractPackageNamesFromRoute'
+import { addPackage } from './packageOperations'
+import HowToUse from './HowToUse.vue'
+
+import AppButton, {
+  AppButtonAppearance,
+} from '@/application/shared/buttons/AppButton.vue'
+import InputField from '@/application/shared/forms/InputField.vue'
 import IconView from '@/shared/icons/IconView.vue'
 import { IconColorizable } from '@/shared/icons/IconProvider'
 
@@ -82,9 +85,9 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-@import '../assets/styles/colors';
-@import '../assets/styles/fonts';
-@import '../assets/styles/sizes-and-spacings';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/sizes-and-spacings';
 
 .footer-buttons {
   margin-top: $spacing-small;
