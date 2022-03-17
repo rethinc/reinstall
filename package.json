@@ -10,7 +10,7 @@
     "format": "eslint --fix 'src/**/*.vue' 'view-examples/**/*.vue' 'src/**/*.ts' 'view-examples/**/*.ts'",
     "lint": "eslint .",
     "test": "jest --watch",
-    "generate-icons": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/generate-icons.ts",
+    "generate-icons": "node --experimental-specifier-resolution=node --loader ts-node/esm ./scripts/generateIcons",
     "view-examples": "vite -c vite.view-examples.config.ts --port 3001"
   },
   "dependencies": {
