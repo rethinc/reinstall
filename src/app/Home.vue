@@ -8,21 +8,21 @@
   </nav>
   <div class="sticky-effect"></div>
   <div class="sticky-logo">
-    <icon-view id="logo" :type="IconRegular.Reinstall_sign" />
+    <IconView id="logo" :type="IconOriginal.ReinstallSign" />
   </div>
   <div class="main-content">
     <div class="app-list">
-      <card-wrapper v-for="packageName in packageNames" :key="packageName">
+      <cardWrapper v-for="packageName in packageNames" :key="packageName">
         <AppCard :package-name="packageName" />
-      </card-wrapper>
+      </cardWrapper>
     </div>
-    <card-wrapper>
+    <cardWrapper>
       <AddApp />
-    </card-wrapper>
+    </cardWrapper>
     <div class="footer-information">
       <a class="footer-link" href="https://rethinc.ch" target="_blank">
         <span>made by re:thinc</span>
-        <icon-view :type="IconColorizable.Rethinc" />
+        <IconView :type="IconColorizable.Rethinc" />
       </a>
     </div>
   </div>
@@ -30,9 +30,9 @@
 
 <script lang="ts">
 import { defineComponent, ref, watch } from 'vue'
-import IconView from '@/shared/icons/IconView.vue'
+import IconView from '@/application/shared/icons/IconView.vue'
 import AddApp from '@/components/AddApp.vue'
-import { IconColorizable, IconRegular } from '@/shared/icons/IconProvider'
+import { IconColorizable, IconOriginal } from '@/application/shared/icons/icons'
 import { useRoute } from 'vue-router'
 import AppCard from '@/components/AppCard.vue'
 import ShareButton from '@/components/ShareButton.vue'
@@ -58,7 +58,7 @@ export default defineComponent({
 
     return {
       IconColorizable,
-      IconRegular,
+      IconOriginal,
       packageNames,
     }
   },
