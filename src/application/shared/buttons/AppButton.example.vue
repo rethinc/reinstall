@@ -19,9 +19,9 @@
 
 <script>
 import { defineComponent } from 'vue'
-import AppButton, { AppButtonAppearance } from '@/shared/buttons/AppButton.vue'
-import IconView from '@/shared/icons/IconView.vue'
-import { IconColorizable } from '@/shared/icons/IconProvider.ts'
+import AppButton, { AppButtonAppearance } from './AppButton.vue'
+import IconView from '@/application/shared/icons/IconView.vue'
+import { IconColorizable } from '@/application/shared/icons/icons'
 
 export default defineComponent({
   name: 'AppButtonExample',

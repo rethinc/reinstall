@@ -40,13 +40,13 @@ npm run test
 ```
 
 ### Views
-
-Add view examples component in `view-examples/examples/shared` and register it in `view-examples/examples.ts`
-
-Run view examples app
+Run view examples app with
 ```
 npm run view-examples
 ```
+
+To add a new example add a vue component file next to the component with a `.example.vue` suffix (e.g MyButton.example.vue).
+
 open browser at [http://localhost:3001](http://localhost:3001)
 
 ### SVG Icons

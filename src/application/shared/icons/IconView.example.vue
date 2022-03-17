@@ -30,28 +30,26 @@
   <p>Sizes can be defined on icon element or its parent</p>
   <div style="display: flex">
     <icon-view
-      :type="IconOriginal.BellCheckmark"
+      :type="IconOriginal.ReinstallSign"
       style="width: 200px; height: 200px"
     />
 
     <div style="width: 200px; height: 200px; border: 1px solid green">
-      <icon-view :type="IconOriginal.BellCheckmark" />
+      <icon-view :type="IconOriginal.ReinstallSign" />
     </div>
   </div>
 
   <h3>style-text</h3>
   <p>Sizes will be adapted by current font-size value of parent element</p>
   <p class="text-example">
-    <icon-view :type="IconColorizable.Checkmark" class="style-text" />
+    <icon-view :type="IconColorizable.Rethinc" class="style-text" />
     sed do eiusmod tempor incididunt ut labore et dolore
-    <icon-view :type="IconOriginal.BellCheckmark" class="style-text" /> magna
-    aliqua.
+    <icon-view :type="IconOriginal.Rethinc" class="style-text" /> magna aliqua.
   </p>
   <p class="text-example-larger">
-    <icon-view :type="IconColorizable.Checkmark" class="style-text" />
+    <icon-view :type="IconColorizable.Rethinc" class="style-text" />
     sed do eiusmod tempor incididunt ut labore et dolore
-    <icon-view :type="IconOriginal.BellCheckmark" class="style-text" /> magna
-    aliqua.
+    <icon-view :type="IconOriginal.Rethinc" class="style-text" /> magna aliqua.
   </p>
 </template>
 

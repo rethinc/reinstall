@@ -1,12 +1,12 @@
 <template>
   <h1>ShareUrl component</h1>
 
-  <share-url url="https://www.rethinc.ch" />
+  <ShareUrl url="https://www.rethinc.ch" />
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ShareUrl from '@/components/ShareUrl.vue'
+import ShareUrl from './ShareUrl.vue'
 
 export default defineComponent({
   name: 'ShareUrlExample',

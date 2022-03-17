@@ -3,13 +3,13 @@
 
   <h2>Basic state</h2>
   <div>
-    <edit-app package-name="ch.viavelo.customer" />
+    <EditApp package-name="ch.viavelo.customer" :on-close="() => {}" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import EditApp from '../../../src/components/EditApp.vue'
+import EditApp from './EditApp.vue'
 
 export default defineComponent({
   name: 'EditAppExample',

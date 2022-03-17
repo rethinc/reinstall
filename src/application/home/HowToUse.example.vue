@@ -1,13 +1,13 @@
 <template>
   <h1>HowToUse component</h1>
   <div>
-    <how-to-use />
+    <HowToUse />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HowToUse from '@/components/HowToUse.vue'
+import HowToUse from './HowToUse.vue'
 
 export default defineComponent({
   name: 'HowToUseExample',

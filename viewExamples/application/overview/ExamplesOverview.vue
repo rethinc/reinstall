@@ -1,17 +1,18 @@
 <template>
   <div class="view-examples-overview">
-    <ViewExamplesNavigation class="navigation" />
-    <router-view />
+    <NavigationView class="navigation" />
+    <ViewExampleIFrame />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import ViewExamplesNavigation from './ViewExamplesNavigation.vue'
+import NavigationView from './NavigationView.vue'
+import ViewExampleIFrame from './ViewExampleIFrame.vue'
 
 export default defineComponent({
-  name: 'ViewExamplesOverview',
-  components: { ViewExamplesNavigation },
+  name: 'ExamplesOverview',
+  components: { ViewExampleIFrame, NavigationView },
 })
 </script>
 
