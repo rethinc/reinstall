@@ -33,7 +33,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, ref } from 'vue'
-import InputField from '@/application/shared/forms/InputField.vue'
+import InputField from '@/application/shared/inputs/InputField.vue'
 import AppButton, {
   AppButtonAppearance,
 } from '@/application/shared/buttons/AppButton.vue'

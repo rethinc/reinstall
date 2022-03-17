@@ -16,7 +16,7 @@ import AppButton, {
 } from '@/application/shared/buttons/AppButton.vue'
 import IconView from '@/application/shared/icons/IconView.vue'
 import { IconColorizable } from '@/application/shared/icons/icons'
-import InputField from '@/application/shared/forms/InputField.vue'
+import InputField from '@/application/shared/inputs/InputField.vue'
 
 export default defineComponent({
   name: 'ShareUrl',

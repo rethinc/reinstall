@@ -36,7 +36,7 @@ import HowToUse from './HowToUse.vue'
 import AppButton, {
   AppButtonAppearance,
 } from '@/application/shared/buttons/AppButton.vue'
-import InputField from '@/application/shared/forms/InputField.vue'
+import InputField from '@/application/shared/inputs/InputField.vue'
 import IconView from '@/application/shared/icons/IconView.vue'
 import { IconColorizable } from '@/application/shared/icons/icons'
 
