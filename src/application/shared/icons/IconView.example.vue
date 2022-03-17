@@ -44,12 +44,14 @@
   <p class="text-example">
     <icon-view :type="IconColorizable.Rethinc" class="style-text" />
     sed do eiusmod tempor incididunt ut labore et dolore
-    <icon-view :type="IconOriginal.Rethinc" class="style-text" /> magna aliqua.
+    <icon-view :type="IconOriginal.ReinstallLogo" class="style-text" /> magna
+    aliqua.
   </p>
   <p class="text-example-larger">
     <icon-view :type="IconColorizable.Rethinc" class="style-text" />
     sed do eiusmod tempor incididunt ut labore et dolore
-    <icon-view :type="IconOriginal.Rethinc" class="style-text" /> magna aliqua.
+    <icon-view :type="IconOriginal.ReinstallLogo" class="style-text" /> magna
+    aliqua.
   </p>
 </template>
 
