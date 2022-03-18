@@ -1,16 +1,18 @@
 <template>
   <h1>IconView</h1>
   <h2>Original icons</h2>
-  <icon-view
-    v-for="type in IconOriginal"
-    :key="type"
-    :type="type"
-    class="icon-example"
-  />
+  <div style="display: flex">
+    <icon-view
+      v-for="type in IconOriginal"
+      :key="type"
+      :type="type"
+      class="icon-example"
+    />
+  </div>
 
   <h2>Colorizable icons</h2>
 
-  <div>
+  <div style="display: flex">
     <icon-view
       v-for="type in IconColorizable"
       :key="type"

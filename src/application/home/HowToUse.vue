@@ -11,7 +11,7 @@
     >
       {{ showDetailButtonContent }}
       <iconView
-        class="show-more-icon"
+        class="show-more-icon style-text"
         :class="{ 'icon-hide': showDetail }"
         :type="IconColorizable.ChevronDown"
       />
@@ -106,12 +106,6 @@ export default defineComponent({
 
 .show-more-icon {
   margin-left: $spacing-smallest;
-  width: 14px;
-  height: 14px;
-
-  .icon-hide {
-    transform: rotate(90deg);
-  }
 }
 
 .icon-hide {

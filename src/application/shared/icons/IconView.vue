@@ -28,7 +28,6 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .icon {
-  display: inline-flex;
   width: 100%;
   height: 100%;
 
@@ -39,14 +38,15 @@ export default defineComponent({
 }
 
 .style-text {
-  width: 1em;
-  height: 1em;
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  position: relative;
+  top: 0.125rem;
 
   :deep(svg) {
-    width: 1em;
-    height: 1em;
-    top: 0.125em;
-    position: relative;
+    width: 1rem;
+    height: 1rem;
   }
 }
 </style>

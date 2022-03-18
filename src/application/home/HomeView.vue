@@ -103,13 +103,12 @@ export default defineComponent({
 .sticky-logo {
   pointer-events: none;
   position: sticky;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   margin: 0 auto;
   top: 3px;
   height: 50px;
   z-index: 10;
+  max-width: 600px;
+  padding: 0 4vw;
 }
 
 .sticky-effect {
