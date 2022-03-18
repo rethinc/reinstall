@@ -40,7 +40,7 @@ import { extractPackageNamesFromRoute } from './extractPackageNamesFromRoute'
 import CardWrapper from './CardWrapper.vue'
 
 export default defineComponent({
-  name: 'App',
+  name: 'HomeView',
   components: {
     CardWrapper,
     IconView,
