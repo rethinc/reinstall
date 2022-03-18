@@ -8,7 +8,7 @@
   </nav>
   <div class="sticky-effect"></div>
   <div class="sticky-logo">
-    <IconView id="logo" :type="IconOriginal.ReinstallSign" />
+    <IconView class="logo" :type="IconOriginal.ReinstallSign" />
   </div>
   <div class="main-content">
     <div class="app-list">
@@ -109,6 +109,11 @@ export default defineComponent({
   z-index: 10;
   max-width: 600px;
   padding: 0 4vw;
+
+  .logo {
+    margin-left: $spacing-normal;
+    width: 35px;
+  }
 }
 
 .sticky-effect {
