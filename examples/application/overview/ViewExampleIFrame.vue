@@ -12,7 +12,7 @@ export default defineComponent({
   setup() {
     const route = useRoute()
     const exampleIFramePath = computed(() => {
-      return `/viewExampleIFrame/?exampleRoute=${route.path}`
+      return `${route.path}/example-iframe/?exampleRoute=${route.query.exampleRoute}`
     })
 
     return {

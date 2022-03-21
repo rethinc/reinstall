@@ -3,7 +3,7 @@ import { mapExampleFilesToRoutes } from './mapExampleFilesToRoutes'
 import * as path from 'path'
 
 export interface ViewExamplesPluginConfiguration {
-  rootExamplesPath: string
+  examplesRootPath: string
   exampleFileNameSuffix: string
 }
 
@@ -14,9 +14,9 @@ export default (
   const resolvedVirtualModuleId = '\0' + virtualModuleId
   const resolvedConfiguration = {
     ...configuration,
-    rootExamplesPath: path.isAbsolute(configuration.rootExamplesPath)
-      ? configuration.rootExamplesPath
-      : path.resolve(configuration.rootExamplesPath),
+    rootExamplesPath: path.isAbsolute(configuration.examplesRootPath)
+      ? configuration.examplesRootPath
+      : path.resolve(configuration.examplesRootPath),
   }
 
   return {
@@ -26,7 +26,8 @@ export default (
       server.watcher.on('all', async (event, changedFilePath) => {
         if (
           ['add', 'unlink'].includes(event) &&
-          changedFilePath.startsWith(resolvedConfiguration.rootExamplesPath)
+          changedFilePath.startsWith(resolvedConfiguration.rootExamplesPath) &&
+          changedFilePath.endsWith(configuration.exampleFileNameSuffix)
         ) {
           const module = server.moduleGraph.getModuleById(
             resolvedVirtualModuleId
