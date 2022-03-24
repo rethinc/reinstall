@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
-import colorizableIcons from './vitePlugins/vite-plugin-colorizable-icons'
-import examples from './vitePlugins/vite-plugin-vue-examples'
+import colorizableIcons from './plugins/vite-plugin-colorizable-icons'
+import examples from './plugins/vite-plugin-vue-examples'
 
 // https://vitejs.dev/config/
 export default defineConfig({
