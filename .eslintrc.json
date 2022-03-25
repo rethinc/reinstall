@@ -1,7 +1,8 @@
 {
   "root": true,
   "env": {
-    "node": true
+    "node": true,
+    "vue/setup-compiler-macros": true
   },
   "parser": "vue-eslint-parser",
   "parserOptions": {
@@ -22,7 +23,7 @@
   },
   "overrides": [
     {
-      "files": ["*.vue","*.ts", "*.js"]
+      "files": ["*.vue","*.ts", "*.js", "*.mjs"]
     }
   ],
   "ignorePatterns": ["node_modules", "dist", "coverage"]
