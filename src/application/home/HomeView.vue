@@ -109,11 +109,6 @@ export default defineComponent({
   z-index: 10;
   max-width: 600px;
   padding: 0 4vw;
-
-  .logo {
-    margin-left: $spacing-normal;
-    width: 35px;
-  }
 }
 
 .sticky-effect {
